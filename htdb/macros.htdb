@@ -1,0 +1,1192 @@
+#define	serverCGI               ${cgi->server_name}${cgi->http_port}
+#define	serverImages            ${cgi->server_name}${cgi->http_port}
+#define	serverHTDB              ${cgi->server_name}${cgi->http_port}
+#define	serverLink              https://${serverHTDB}
+#define	images                  https://${serverImages}/images
+#define	icons					${images}/icons
+
+#define	JBC_CSS
+#define	tag_beg	<h1>
+#define	tag_end	</h1>
+#define	gigs	${serverLink}/gigs
+#define	pix		${serverLink}/pix
+#define	people	${serverLink}/people
+#define	about	${serverLink}/about
+#define	news	${serverLink}/news
+#define	home	${serverLink}/index.html
+#define	links	${serverLink}/links
+#define	press	${serverLink}/press
+#define	audio	${serverLink}/audio
+#define	lyrics	${serverLink}/lyrics
+#define	fliers	${gigs}/fliers.html
+
+#define	gigs/2001	gigs2001
+#define	gigs/2002	gigs2002
+#define	gigs/2003	gigs2003
+#define	gigs/2004	gigs2004
+#define	gigs/2005	gigs2005
+#define	gigs/2006	gigs2006
+#define	gigs/2007	gigs2007
+#define	gigs/2008	gigs2008
+#define	gigs/2009	gigs2009
+#define	gigs/2012	gigs2012
+
+#define	NH		Northampton
+
+#define linkWilsonPerson(href, name)
+    <a href="${href}">${name}</a>
+
+#define	jbc_gigs	https://jazzbutcher.com/gigs
+#define	wolfi		${linkWilsonPerson(href=https://jazzbutcher.com/conspirators/wolfgang_tschegg, name=Wolfgang Tschegg)}
+#define	curt		${linkWilsonPerson(href=${people}#curt, name=Curtis)}
+#define	w_curt		${linkWilsonPerson(href=${people}#curt, name=Mister E. Wilson)}
+#define	gab			${linkWilsonPerson(href=https://jazzbutcher.com/conspirators/gabriel_turner, name=Garbriel Turner)}
+#define russ    	${linkWilsonPerson(href=${people}#russ, name=Russ)}
+#define w_russ    	${linkWilsonPerson(href=${people}#russ, name=Agent Wilson)}
+#define	pat			${linkWilsonPerson(href=${people}#pat, name=Headstone)}
+#define	w_pat		${linkWilsonPerson(href=${people}#pat, name=Wilson Headstone)}
+#define steve    	${linkWilsonPerson(href=${people}#steve, name=Steve)}
+#define w_steve    	${linkWilsonPerson(href=${people}#steve, name=Stevie G. Wilson)}
+#define w_misery   	${linkWilsonPerson(href=${people}#misery, name=Misery Wilson)}
+#define w_bot   	${linkWilsonPerson(href=${people}#bot, name=MC Bot)}
+#define w_george   	${linkWilsonPerson(href=${people}#george, name=MC George)}
+#define w_andy   	${linkWilsonPerson(href=${people}#andy, name=DJ Andy Skank)}
+#define w_kathie   	Special K.
+#define	sumosonic	<a href="https://sumosonic.com">Sumosonic</a>
+#define	rotten		<a href="https://jazzbutcher.com/releases/rotten">Rotten Soul</a>
+#define	wilson		Wilson
+
+#define	linkWilsonSearch(query, text)
+	<a href="https://google.com/search?q=%22${encode(${query})}%22" target="new">${ternary((defined(text)), ${text}, ${query})}</a>
+
+#define	header
+	${mkWilsonHeader()}
+
+#define	footer
+	<br clear=all>
+	<br>
+	${fetchComments(res=${db}/${page})}
+	</td></tr></table>
+	</font>
+	</td></tr></table>
+
+#define	mkWilsonHeader(section, title)
+	<head>
+	<title>
+	Wilson
+#live	if (defined(section))
+		: ${section}
+#live	endif
+	</title>
+	</head>
+	<body bgcolor="#ffffff" leftmargin=0 topmargin=0 rightmargin=0 link="#000000" vlink="#000000">
+	<table border=0 cellpadding=0 cellspacing=0 width=100%><tr>
+	<td width="140" valign="top" bgcolor="#ee0000">
+		<table border=0 cellpadding=5 cellspacing=0 width="130"><tr><td
+			align="center" height="106" bgcolor="#333333">${fetchRandImage()}</td></tr>
+		<tr><td align="right">
+		</td></tr>
+
+		<tr><td align="left" bgcolor="#ee0000"><font size="3" face="Sans-Serif, arial" color="#000000">
+			<b>News</b>
+		</font></td></tr>
+
+		<td align="left"><font size="3" face="Sans-Serif, arial" color="#333333">
+			<img src="${images}/spacer.gif" width=10 height=5 alt=""><a href="${news}">Latest</a><br>
+		</font></td></tr>
+
+		<tr><td align="left" bgcolor="#ee0000"><font size="3" face="Sans-Serif, arial" color="#000000">
+			<b>Music</b>
+		</font></td></tr>
+
+		<tr><td align="left"><font size="3" face="Sans-Serif, arial" color="#333333">
+			<img src="${images}/spacer.gif" width=10 height=5 alt=""><a href="${audio}">Listen</a><br>
+			<img src="${images}/spacer.gif" width=10 height=5 alt=""><a href="${lyrics}">Lyrics</a><br>
+		<font></td></tr>
+
+		<tr><td align="left" bgcolor="#ee0000"><font size="3" face="Sans-Serif, arial" color="#000000">
+		<b>Live</b>
+		</font></td></tr>
+
+		<tr><td align="left"><font size="3" face="Sans-Serif, arial" color="#333333">
+			<img src="${images}/spacer.gif" width=10 height=5 alt=""><a href="${gigs}">Gigs</a><br>
+#live	loop(y, 2001, 2012)
+#live	if (defined(gigs/${y}))
+				<img src="${images}/spacer.gif" width=25 height=5 alt=""><a href="${gigs}/${y}">${y}</a><br>
+#live	endif
+#live	endloop
+			<img src="${images}/spacer.gif" width=10 height=5 alt=""><a href="${fliers}">Fliers</a><br>
+		<font></td></tr>
+
+		<tr><td align="left" bgcolor="#ee0000"><font size="3" face="Sans-Serif, arial" color="#000000">
+		<b>Info</b>
+		</font></td></tr>
+
+		<tr><td align="left"><font size="3" face="Sans-Serif, arial" color="#333333">
+			<img src="${images}/spacer.gif" width=10 height=5 alt=""><a href="${about}">About</a><br>
+			<img src="${images}/spacer.gif" width=10 height=5 alt=""><a href="${people}">People</a><br>
+			<img src="${images}/spacer.gif" width=10 height=5 alt=""><a href="${about}/communique1.html">Item#1</a><br>
+			<img src="${images}/spacer.gif" width=10 height=5 alt=""><a href="${about}/communique2.html">Item#2</a><br>
+			<img src="${images}/spacer.gif" width=10 height=5 alt=""><a href="${about}/bang.html">Bang</a><br>
+			<img src="${images}/spacer.gif" width=10 height=5 alt=""><a href="${about}/speedbump.html">Speedbump</a><br>
+			<img src="${images}/spacer.gif" width=10 height=5 alt=""><a href="${links}">Links</a><br>
+		<font></td></tr>
+
+		<tr><td align="left" bgcolor="#ee0000"><font size="3" face="Sans-Serif, arial" color="#000000">
+		<b>Press</b>
+		</font></td></tr>
+		            
+		<tr><td align="left"><font size="3" face="Sans-Serif, arial" color="#333333">
+			<img src="${images}/spacer.gif" width=10 height=5 alt=""><a href="${press}/2003Sep16.html">BBCi</a><br>
+			<img src="${images}/spacer.gif" width=10 height=5 alt=""><a href="${press}/2004Sep12.html">Cricket Gig</a><br>
+		<font></td></tr>
+
+		<tr><td align="left" bgcolor="#ee0000"><font size="3" face="Sans-Serif, arial" color="#000000">
+		<b>Pix</b>
+		</font></td></tr>
+
+		<tr><td align="left"><font size="3" face="Sans-Serif, arial" color="#000000">
+			<img src="${images}/spacer.gif" width=10 height=5 alt=""><a href="${gigs}/2002/Jan31.html#pix">2002Jan31</a><br>
+			<img src="${images}/spacer.gif" width=10 height=5 alt=""><a href="${gigs}/2002/Mar30.html#pix">2002Mar30</a><br>
+			<img src="${images}/spacer.gif" width=10 height=5 alt=""><a href="${gigs}/2002/Sep21.html#pix">2002Sep21</a><br>
+			<img src="${images}/spacer.gif" width=10 height=5 alt=""><a href="${gigs}/2003/May4.html#pix">2003May4</a><br>
+			<img src="${images}/spacer.gif" width=10 height=5 alt=""><a href="${pix}/2003coonce.html">Practice</a><br>
+			<img src="${images}/spacer.gif" width=10 height=5 alt=""><a href="${gigs}/2003/Oct16.html#pix">2003Oct16</a><br>
+			<img src="${images}/spacer.gif" width=10 height=5 alt=""><a href="${gigs}/2003/Dec24.html#pix">2003Dec24</a><br>
+			<img src="${images}/spacer.gif" width=10 height=5 alt=""><a href="${gigs}/2004/Feb13.html#pix">2004Feb13</a><br>
+			<img src="${images}/spacer.gif" width=10 height=5 alt=""><a href="${gigs}/2004/Feb28.html#pix">2004Feb28</a><br>
+			<img src="${images}/spacer.gif" width=10 height=5 alt=""><a href="${gigs}/2004/Apr30.html#pix">2004Apr30</a><br>
+			<img src="${images}/spacer.gif" width=10 height=5 alt=""><a href="${gigs}/2004/May4.html#pix">2004May4</a><br>
+			<img src="${images}/spacer.gif" width=10 height=5 alt=""><a href="${gigs}/2004/Sep12.html#pix">2004Sep12</a><br>
+			<br>
+			<br>
+			<br>
+			<br>
+		<font></td></tr>
+
+		<tr><td align="center" bgcolor="#efefef">${poweredw}</td></tr></table>
+	</td>
+#	<td valign="top" bgcolor="#000000" width="2"><img src="${images}/spacer.gif" width="2" height="2"></td>
+	<td valign="top" align="left" width="100%" bgcolor="#ffffff">
+	<table border=0 cellpadding=5 cellspacing=0 width="100%"><tr><td bgcolor="#ee0000" align="center" colspan="2">
+	<a href="/"><img border=0 width=364 height=106 src="${images}/wilson_logo.gif"></a></td>
+	</tr>
+	<tr><td width="100%"><img src="${images}/spacer.gif" width="300" height="1"></td><td width="300" bgcolor="#333333" align="center">
+	<nobr>
+	<font color="#ffffff" size="4" face="Sans-Serif">
+#live	if (!((getval(db) = htdb) && (getval(page) = index.html)))
+#live	if (makeArray(a, /, ${db}))
+#live	while (r = a[*])
+	${pretty(${a[${r}]})}
+#live	if (defined(a[${eval(${r} + 1)}]))
+	::
+#live	endif
+#live	endwhile
+#live	endif
+#live	if (getval(page) != index.html)
+	:: ${replace(${pretty(${truncAt(., ${page})})}, _, &nbsp;)}
+#live	endif
+#live	else
+	Home
+#live	endif
+	</font>
+	</nobr>
+	</td></tr>
+	<tr><td bgcolor="#ffffff" colspan="2">
+	<font size="3" face="Sans-Serif, arial" color="#222222">
+
+#define	mkWilsonGigLink(year, mon, day, venue, address, city, state, country, notes, extra, what)
+#live	if (sql(_ht:select num from hit where domain_id=${_domain_id} and resource='gigs/${year}/${mon}${day}.html'))
+#live	endif
+	<dd>
+	<table border=0 cellpadding=2 cellspacing=0 width="90%"
+#live	if (getnum(year) == ${_current_year})
+#live	if (month2num(${mon}) > ${_current_monthnum})
+	bgcolor="#cfcfcf"
+#live	else if ((month2num(${mon}) = ${_current_monthnum}) && (getnum(day) >= ${_current_day}))
+	bgcolor="#cfcfcf"
+#live	else
+	bgcolor="#dedede"
+#live	endif
+#live	else
+	bgcolor="#dedede"
+#live	endif
+	>
+	<tr><td valign=top colspan="2">
+#live	if (sql(ac:select count(*) as cnt from wilsondub_com.feedback where uri='gigs/${year}/${mon}${day}.html'))
+#live	endif
+	<font size="-1">
+#live	if (defined(day))
+	<a href="${gigs}/${year}/${mon}${day}.html">
+	${padZero(${int(${day})})}${mon}${year}
+	</a>
+#live	else
+	<a href="${gigs}/${year}/${mon}${day}.html">
+	${date(F\, Y, ${padZero(${int(${day})})}${mon}${year})}</a>
+#live	endif
+	</font>
+	</td>
+	</tr>
+	<td valign=top bgcolor="e9e9e9">
+	<img src="${img}/spacer.gif" width="21" height="10">
+	</td>
+	<td valign=top width="100%" bgcolor="e9e9e9">
+	<font size="-1">
+#live	if (defined(what))
+	<b>${what}</b>
+#live	endif
+#live	if (defined(city))
+	${city},
+#live	endif
+#live	if (defined(state))
+	${state},
+#live	endif
+#live	if (defined(country))
+	${country}
+#live	endif
+#live	if (defined(venue))
+	<sup><font size="1">\@</font></sup> <i>${venue}</i>
+#live	endif
+#live	if (defined(address))
+	- ${address}
+#live	endif
+#live	if (defined(notes))
+	-
+	<i>${notes}</i>
+#live	endif
+	</font>
+	<div align="right">
+	<font size=2 color="#990000">
+#live	if (getnum(ac->cnt) > 0)
+	<a href="${gigs}/${year}/${mon}${day}.html">${icon_feedback}</a>
+#live	endif
+#live	if (getval(extra) == players)
+	<a href="${gigs}/${year}/${mon}${day}.html"><img
+		src="${icons}/iconPlayers.gif" width=17 height=17 alt="[performers listed]" border="0"></a>
+#live	endif
+#live	if (getval(extra) == teaser)
+	<a href="${gigs}/${year}/${mon}${day}.html"><img
+		src="${icons}/iconQuotes.gif" width=17 height=16 alt="[pre-show announcement]" border="0"></a>
+#live	endif
+#live	if (getval(extra) == review)
+	<a href="${gigs}/${year}/${mon}${day}.html"><img
+		src="${icons}/iconThumbsup.gif" width=15 height=17 alt="[fan review]" border="0"></a>
+#live	endif
+#live	if (getval(extra) == pix)
+	<a href="${gigs}/${year}/${mon}${day}.html"><img
+		src="${icons}/iconPhoto.gif" width=15 height=13 alt="[photos]" border="0"></a>
+#live	endif
+#live	if (getval(extra) == recording)
+	<a href="${gigs}/${year}/${mon}${day}.html"><img
+		src="${icons}/iconBootleg.gif" width=17 height=15 alt="[audio recording]" border="0"></a>
+#live	endif
+#live	if (getval(extra) == video)
+	<a href="${gigs}/${year}/${mon}${day}.html"><img
+		src="${icons}/iconVideo.gif" width=22 height=11 alt="[video recording]" border="0"></a>
+#live	endif
+#live	if (getval(extra) == with)
+	<a href="${gigs}/${year}/${mon}${day}.html"><img
+		src="${icons}/iconStar.gif" width=12 height=12 alt="[with band of note]" border="0"></a>
+#live	endif
+#live	if (getval(extra) == self)
+	<a href="${gigs}/${year}/${mon}${day}.html"><img
+		src="${icons}/iconReview.gif" width=16 height=18 alt="[pat reviews the performance note]" border="0"></a>
+#live	endif
+#live	if (getval(extra) == notes)
+	<a href="${gigs}/${year}/${mon}${day}.html"><img
+		src="${icons}/iconQuotes.gif" width=17 height=16 alt="[additional performance notes]" border="0"></a>
+#live	endif
+#live	if ((getval(extra) = P) || (getval(extra) == pat))
+	<a href="${gigs}/${year}/${mon}${day}.html"><img
+		src="${icons}/iconQuotes.gif" width=17 height=16 alt="[additional performance notes]" border="0"></a>
+#live	endif
+#live	if (getval(extra) == ticket)
+	<nobr>[scanned ticket stub]</nobr>
+#live	endif
+#live	if (getval(extra) == map)
+	[map to venue]
+#live	endif
+#live	if (getval(extra) == poster)
+	[poster]
+#live	endif
+#live	if (getval(extra) == press)
+	<nobr>[press accounts]</nobr>
+#live	endif
+#live	if (getval(extra) == setlist)
+	<nobr>[scanned setlist]</nobr>
+#live	endif
+#live	if (getval(extra) == songlist)
+	[songlist]
+#live	endif
+#live	if (getval(extra) == notes)
+	\[\notes\]
+#live	endif
+	</font>
+#live	if (getnum(_ht->num) > 0)
+	<font size=1 color="#666666">(${prettyNumber(${_ht->num})} viewings)</font>
+#live	endif
+	</div>
+	</td></tr>
+	</table>
+	</dd>
+	<p>
+
+#define	mkWilsonGigDate()
+#live	if (define(dd, ${padZero(${int(${substr(3, 2, ${page})})})}))
+	${define(mm, ${substr(0, 3, ${page})})}
+	${define(yy, ${substr(5, 4, ${db})})}
+#live	if (getnum(dd) > 0)
+#	${date(l\, jS \o\f F, ${dd}${mm}${yy})} <a href="${gigs}/${yy}">${yy}</a>
+	${date(l\, F jS\,, ${dd}${mm}${yy})} <a href="${gigs}/${yy}">${yy}</a>
+#live	else
+	${date(F, ${dd}${mm}${yy})} <a href="${gigs}/${yy}">${yy}</a>
+#live	endif
+#live	endif
+
+#define	upcomingGigs
+	<b>Recent and Upcoming Gigs</b>
+	<dl>
+
+	<a href="${gigs}/2012/Sep7.html"><img
+		src="${images}/20120907/poster_20120907_250.jpg"
+		width=250 height=265 hspace="5" vspace="5"></a>
+	${mkWilsonGigLink(year=2012, mon=Sep, day=7, venue=The Picturedome, address=Kettering Road, city=Northampton, country=England, extra=poster)}
+	<a href="${gigs}/2009/Aug15.html"><img
+		src="${images}/20090815/poster_20090815_250.jpg"
+		width=250 height=360 hspace="5" vspace="5"></a>
+	${mkWilsonGigLink(year=2009, mon=Aug, day=15, venue=The Picturedome, address=Kettering Road, city=Northampton, country=England, notes=SPECIAL GIG!!, extra=poster)}
+#live	if (getval(db) != gigs)
+	<dd>
+	<b><a href="${gigs}">All Gigs..</a></b>
+	</dd>
+#live	endif
+	</dl>
+
+#define icon_copyright
+    &copy;
+#define icon_extra      <img height="20" width="20" alt="[extra shit]" border="0" src="${images}/exclamation.gif" hspace="2">
+#define icon_feedback   <img height="19" width="19" alt="[extra shit]" border="0" src="${icons}/iconFeedback2.gif" hspace="2">
+#define icon_feedback_rev   <img height="19" width="19" alt="[extra shit]" border="0" src="${images}/iconFeedback.gif" hspace="2">
+
+#define	poweredw
+#	<font size=1 color="#666666" face="sans-serif">${prettyNumber(${_hit_count})} viewings</font>
+#	<br>
+#	<a href="https://htdb.org"><img
+#		alt="powered by HTDB"
+#		src="${images}/poweredw.gif" width=119 height=22 border=0></a>
+
+#define	SHOW		<h3>Live Show</h3>
+#define	UK			England
+#define	g_venue		<br><b>Venue:</b>
+#define	g_address	<br><b>Address:</b>
+#define	g_town		<br><b>Where:</b>
+#define	g_date		<br><b>When:</b>
+#define	g_tunes		<br><b>Played:</b><br>
+#define	g_encore	<br><b>Encore:</b><br>
+#define	g_support	<br><b>Opening:</b>
+
+#define	who_beg		<p><b>Players</b><blockquote>
+#define	who_end		</blockquote>
+#define	notes_beg	<p><b>Notes</b><blockquote>
+#define	notes_end	</blockquote>
+#define	pat_beg		<p><b>Headstone Says..</b><blockquote>
+#define	pat_end		</blockquote>
+#define	pat_says_beg	${pat_beg}
+#define	pat_says_end	${pat_end}
+#define	played_beg	<p><b>Played:</b><blockquote>
+#define	played_end	</blockquote>
+#define	encore_beg	<p><b>Encore:</b><blockquote>
+#define	encore_end	</blockquote>
+
+#define	notYet	<b>not yet..</b>
+
+#define linkFeedback    ${base_url}/feedback
+
+#define	mkHeadstoneSez(txt)
+	${pat_beg}
+	${txt}
+	${pat_end}
+
+#define	maxNews	55
+#define	news[55]->date 2010-11-09
+#define	news[55]->item
+	the Wilson movie. We gave a sneak preview last week at a local film night...which was in the venue where we played the gig. So that was pretty strange to see! Kinda infinite regression faux 3D. With time travel. Ungh...<p>
+There are clips from the Wilson DVD to be seen on ${linkExternal(https://youtube.com/watch?v=Hic-yax9asQ, youtube)}.
+#define	news[54]->date 2006-08-16
+#define	news[54]->item
+                                                             Planet Misery presents                                                              
+<p>
+                                                                       at                                                                        
+  <p>
+                                                                  THE RACEHORSE                                                                  
+    <p>
+                                                       15 Abington Square, Northampton NN1                                                       
+      <p>
+                                                                       on                                                                        
+        <p>
+                                                           ${linkInternal(${gigs}/2006/Sep10.html, SUNDAY 10th SEPTEMBER 2006)}
+<p>
+                                                                                                                                                 
+                                                                                                                                                 
+                                                                                                                                                 
+                                                                                                                                                 
+                                                                 THE WOODENTOPS                                                                  
+  <p>
+                                                                      plus                                                                       
+<p>
+                                                                     WILSON                                                                      
+<p>
+                                                                                                                                                 
+                                                                                                                                                 
+                            This will be the first live show from the legendary Rough Trade chart-toppers since 1992,                            
+<p>
+                                  a special warm-up for their gig at the 100 Club in London on Wednesday 13th.                                   
+<p>
+                                       Support comes from NN1's award-winning Gangster Goth combo, Wilson.                                       
+<p>
+                                                                                                                                                 
+                                                                                                                                                 
+                                             Doors open at 8:00pm in the back room of the Racehorse.                                             
+<p>
+                                                               Admission is 5:00                                                              
+<p>
+                                              Please get there early, as this event will sell out.    
+<p>
+Doors: 8:00pm                                                                                                                                         
+<p>
+Wilson onstage 9:15pm
+<br>
+Woodentops onstage: 10:15pm
+<br>
+Bar closes at midnight
+#define	news[53]->date 2006-05-05
+#define	news[53]->item
+Sunday 7th May                                                                                                                                          
+The Racehorse, Abington Square, Northampton NN1                                                                                                         
+                                                                                                                                                        
+																																						Planet Misery presents                                                                                                                                  
+																																						WILSON                                                                                                                                                  
+																																						www.wilsondub.com                                                                                                                                       
+																																						${linkExternal(http://www.myspace.com/wilsondub)}                                                                                                                               
+																																						Northampton's original dub goth prog punk bruisers are back!                                                                                            
+																																						admission free  
+#define	news[52]->date 2005-12-02
+#define	news[52]->item
+	Wilson have just emerged from a very pleasant three days at Premier Studios in Corby ${linkExternal(http://www.premierstudios.co.uk)}
+	with new recordings of
+	two tunes, ${Police_Chief} and ${Buffalo_Sniper}.
+
+#define	news[51]->date 2005-10-15
+#define	news[51]->item
+	Wilson conclude their run on the BBC Weekender Chart with a second consecutive week at Number One. So our chart positions
+	for the past few weeks look like this: No. 1 - No. 3 - No. 2 - No. 2 - No. 1 - No. 1. An impressive tribute to the power
+	of the Wilson electoral machine. Thanks to everybody for your support!<p>
+	${linkExternal(http://www.bbc.co.uk/northamptonshire/entertainment/weekender)}
+#define	news[50]->date 2005-10-10
+#define	news[50]->item
+	Wilson are delighted to report that they are back up to Number One on the Weekender chart. Thank you all for your votes, and please keep them coming.
+	${linkExternal(http://www.bbc.co.uk/northamptonshire/entertainment/weekender)}
+#define	news[49]->date 2005-10-03
+#define	news[49]->item
+	Congratulations to Jon and Griff of the BBC Weekender on winning gold at the recent Gillard
+	Awards for broadcasting. A righteous result! Wilson are currently flying high at No. 2 on the
+	Weekender chart. Please take a moment of your day to pass by
+	${linkExternal(http://www.bbc.co.uk/weekender)} and
+	register a vote for us there. Thank you!
+#define	news[48]->date 2005-09-16
+#define	news[48]->item
+	Wilson are down to Number 3 in this week's BBC Weekender chart. Please, people, do take a moment of your time to  ${linkExternal(http://www.bbc.co.uk/northamptonshire/entertainment/weekender, help us topple)} the
+	-admittedly excellent - Columbus & Crusoe from their lofty heights and raise the mighty Wilson back to their rightful spot at the
+	top of the charts. You will have your reward on a higher plane of existence, or possibly in a
+	pub.
+
+#define	news[47]->date 2005-09-10
+#define	news[47]->item
+	<b>Top of the Charts again!</b>
+	<p>
+	Wilson returned to the top of the BBC Weekender Chart with a bullet last night - straight in at Number One.
+	Many thanks to everybody who voted for Critters. As DJ Griff said on last night's show, "Wilson have the
+	international vote with fans all over the world, and who are we to stand in the way of that?"
+	<p>
+	Of course, it remains to be seen if we can hang on to that top slot, so please do keep on voting over the next
+	few weeks at ${linkExternal(http://www.bbc.co.uk/northamptonshire/entertainment/weekender)}
+	<p>
+	While you're at it, check out the rest of the Weekender site and see why the show is up for a prestigious
+	Gillard broadcasting award. You can listen to the show online and they do a podcast as well. You'll be
+	supporting Wilson, supporting the best radio show that Northampton has ever had and supporting the UK music
+	scene in general. Can't be bad.
+
+#define	news[46]->date 2005-09-04
+#define	news[46]->item
+	Once again Wilson find themselves in the running on the BBC Weekender chart. This
+	time they didn't even tell us. I think it's a test of our electoral support. Fair
+	enough. It's important to maintain vigilance on behalf of democracy.
+	 
+	But will we be caught out? Will our loyal heartland vote be revealed to be a mere
+	chimera, a nine day wonder, the fickle flickering of the flame of fortune on the
+	chrome dome of our secret Antarctic headquarters? Of course not.
+	<p>
+	Good people, take a minute of your day to pass by
+	${linkExternal(http://www.bbc.co.uk/northamptonshire/entertainment/weekender)} and cast a vote for
+	Wilson's rather ancient home-made rendition of Critters. You can listen to it as
+	well.
+	<p>
+	In fact, you can listen to shedloads of good stuff on this site. The Weekender
+	boys have got it going on. You can listen to their show anywhere in the world on
+	your computer. You'll hear all the freshest new UK releases alongside the best of
+	everything going on in the Northampton area. Unbelievable but true! So support
+	your local digital underclass senile delinquents and support the mighty Weekender
+	at the same time.
+
+#define	news[45]->date 2005-08-26
+#define	news[45]->item
+	The First Wave penetrates the Balloon Festival at about 3:30 on a sunny Saturday afternoon. Happily
+	Julie Reinger and the Weather Prophets have got it badly wrong. Deluge there is none. It's a beautiful
+	day in the neighbourhood. The first thing we find as we enter the backstage compound is the Mystic
+	Crew, which is a good way to start. Northampton's finest original reggae rockers have the slot before
+	ours this afternoon, but right now the Drake Music Project are onstage. They are an extraordinary band,
+	made up entirely of some pretty severely disabled people. With keyboards and percussion they are
+	weaving a mad, precise and rather beautiful sort of mutated sixties soundtrack samba sound. It's like
+	nothing you have ever heard. See them if you get the chance; you won't believe what's going on in front
+	of you.
+	<a href="${gigs}/2005/Aug20.html">more...</a>
+
+#define	news[44]->date 2005-08-26
+#define	news[44]->item
+	It is three thirty on a damp afternoon in the teeth-grindingly picturesque village of Castle Ashby. A
+	large silver station wagon packed to the gunnels with boxes of black and chrome slides stealthily along
+	a quaint country lane. Two faintly desperate looking men in sunglasses are in the front, their windows
+	wound fully down, as though the day were much sunnier than it is. From those windows comes a cloud of
+	acrid smoke and the unmistakeable roar of Killing Joke's mighty Asteroid. The first wave has almost
+	made it to Security Checkpoint One.
+	<a href="${gigs}/2005/Aug19.html">more...</a>
+
+#define	news[43]->date 2005-08-17
+#define	news[43]->item
+	People~
+	<p>
+	This weekend Wilson go festival happy: come and join in, why don't you?
+	<p>
+	<a href="${gigs}/2005/Aug19.html">Friday 19th August</a> - Air 05 Festival, Grendon Lakes, Northamptonshire - Onstage 10:00pm
+	<br>
+	<a href="${gigs}/2005/Aug20.html">Saturday 20th August</a> - Balloon Festival (Weekender Stage), The Racecourse, Northampton - Onstage 5:00pm
+	<p>
+	Hope to see you.
+	<br>
+	Your pals,
+	<br>
+	Wilson
+
+#define	news[42]->date 2005-06-27
+#define	news[42]->item
+	No boats required! We said it would be drier than Glastonbury, didn't we? Another super night at the Racehorse for Wilson. Our projector made its live debut,
+	running kung-fu movies and footage of...uh...Wilson over the band and the PA from Phoenix Soundworks performed admirably under severe pressure. The Importers got
+	the show under way with a bright and tuneful set of original pirate material that certainly revealed their fondness for New Order. It was only their second ever
+	show, but despite the occasional wobbly moment where band and backing track didn't quite see eye-to-eye, they acquitted themselves well. We shall surely be seeing
+	more of them.
+	<a href="${gigs}/2005/Jun26.html">More</a>...
+
+#define	news[41]->date 2005-05-20
+#define	news[41]->item
+	Wilson have been invited to take part in Twinfest once again. After last year's surreal episode playing in an empty park at an
+	hour when we would not be normally out of bed, we made a few gentle enquiries...with the result that you can see Wilson in the
+	Racehorse garden at 8:00pm sharp on Saturday 4th June 2005. As far as we are aware, entrance is free.
+	<p>
+	So the current rundown of Wilson gigs in the near future is this:
+	<p>
+	<a href="${gigs}/2005/May17.html">Tue 17th May</a> - The Soundhaus, supporting POLYSICS. £5:00 admission, Wilson onstage at 9:00pm sharp.
+	<br>
+	<a href="${gigs}/2005/May21.html">Sat 21st May</a> - The Labour Club. Free admission, Wilson onstage at 10:00pm sharp. Support and disco.
+	<br>
+	<a href="${gigs}/2005/Jun4.html">Sat 4th June</a> - TWINFEST at The Racehorse. Free admission, Wilson onstage at 8:00pm sharp. Many other bands.
+	<br>
+	<a href="${gigs}/2005/Jun26.html">Sun 26th June</a> - The Racehorse. Free admission. Wilson onstage at 10:00pm sharp. Drier than glastonbury.
+
+#define	news[40]->date 2005-03-27
+#define	news[40]->item
+	Wilson are currently rehearsing up new songs. We have styled the current crop of tunes "Battle Garage".
+	There's one date to add to the listings: <a href="${gigs}/2005/May21.html">Saturday 21st May - The Labour Club, NN1</a> (support tbc).
+
+#define	news[39]->date 2005-02-20
+#define	news[39]->item
+	Wilson have been invited to headline at the Tom Hall Memorial gig at Northamptonshire
+	County Cricket Club, Wantage Road, NN1 on <a href="${gigs}/2005/Feb20.html">Saturday 23rd April.</a>
+	Full details in due
+	course, but we already know that the show also features sets from Curtis E. Johnson,
+	Mrs. Pilgrimm, and  Ghost Train. It will not be in the afternoon. It will be in the evening. Nor shall we
+	be without our artillery. We shall be drummed up to the hilt.
+
+#define	news[38]->date 2005-02-06
+#define	news[38]->item
+	Wilson have a very limited number of tickets for a private party which we are
+	playing in Northampton Town on <a href="${gigs}/2005/Feb5.html">Saturday 5th February 2005</a>. If you want one, come and
+	find us...
+
+#define	news[37]->date 2004-12-17
+#define	news[37]->item
+	Thanks to everybody who voted to make Wilson the People's Choice on BBC Radio Northampton's end of year
+	awards.
+	<p>
+	We won Best Song and Best Band. Coz we have the best fans. Thanks!
+#define	news[36]->date 2004-12-10
+#define	news[36]->item
+	Once again the local BBC rock show, The Weekender, has embarked upon a cyber-election, this time to
+	make their awards for the year 2004. The votes will be counted and the winners announced on the
+	Weekender show on Friday 17th December.
+	<p>
+	The Wilson posse are entered in three separate categories this year: Best Band, Best Song and Best
+	Weekender Session (all right, so this was a Pat Fish session, but he did play Buffalo Sniper). We
+	would really appreciate your votes, so please go check out
+	${linkExternal(http://www.bbc.co.uk/northamptonshire/weekender/awards_about.shtml)}
+	and cast your votes for the NN1
+	Sound. You'll be helping us a lot.
+	<p>
+	Remember, you need to cast your vote before Friday 17th December.
+	<p>
+	Many thanks in anticipation,
+	Your pals,
+	WILSON
+
+#define	news[35]->date 2004-11-23
+#define	news[35]->item
+	It's time to make An Announcement.
+	<p>
+	The Wilson Five are once again restored to their proper number.
+	<p>
+	Starting from the <a href="${gigs}/2004/Dec5.html">gig at the Racehorse</a> on December 5th Wilson will be joined by drummer, Steve Beswick.
+	Steve has previously played with the Heart Throbs and Mark Refoy's Slipstream. He also played alongside Agent Wilson in the Love Ambassadeux, a
+	long-gone Northampton band now strangely popular in Croatia.
+
+#define	news[34]->date 2004-10-30
+#define	news[34]->item
+	Well, there goes our month of chart action, and many thanks to all who voted for Wilson.
+	Final tally: 2 weeks at #1 and 2 weeks at #2. I reckon that makes us #1 for the month of October, don't you?
+	Yeah, course you do. Thanks again, everybody.
+	<p>
+	Headstone
+	<br>xxx
+#define	news[33]->date 2004-10-24
+#define	news[33]->item
+	Wilson have been toppled from their lofty pinnacle. We're down at Number 2 this week.
+	(No, really, no need to say anything - we know)
+	<p>
+	${linkExternal(http://www.bbc.co.uk/northamptonshire/content/articles/2004/08/04/weekender_chart_vote_feature.shtml,
+	So...uh...please do keep voting this coming week.)}
+#define	news[32]->date 2004-10-21
+#define	news[32]->item
+	Citizens~
+	<p>
+	The midweeks are in for the Northampton radio chart, and Wilson are in trouble. We're down at Number Three.
+	It's not too late for a last Floridian push here, so please stop by at
+	${linkExternal(http://www.bbc.co.uk/northamptonshire/content/articles/2004/08/04/weekender_chart_vote_feature.shtml,
+	 and cast a vote for Wilson)} some time today or tomorrow.
+	<p>
+	Many thanks,<br>
+	Karl Rove
+#define	news[31]->date 2004-10-16
+#define	news[31]->item
+	Many thanks to everybody whose votes made Wilson Number One on the
+	BBC Radio Northampton Weekender chart for the second week running!
+	But please do remember, this thing goes on all through the month of October. A whole new week has started now and the
+	way that this thing works, all bets are off - so please do visit again and cast your vote for this week. Let's see how
+	long we can keep Wilson at the Top Of The Charts!
+	<p>
+	${linkExternal(http://www.bbc.co.uk/northamptonshire/content/articles/2004/08/04/weekender_chart_vote_feature.shtml,
+	Go vote for Wilson)}
+#define	news[30]->date 2004-09-30
+#define	news[30]->item
+	<br clear=all>
+	<b>Vote Wilson</b>
+	<p>
+	BBC Radio Northampton show The Weekender is a top suporter of local talent. For months now the boys Jon and Griff have
+	done wonders to showcase good local acts and they have been enormously supportive in giving the oxygen of publicity to
+	the Masters of Budvar nights which I organise at the Labour Club. They've interviewed me a couple of times and they
+	<a href="http://www.bbc.co.uk/northamptonshire/content/articles/2004/08/04/weekender_chart_vote_feature.shtml"><img
+		hspace="3" vspace="3" src="http://www.wilsondub.com/images/VOTA.jpg" width=268 height=275 border=0 align="right"></a>
+	have broadcast an acoustic session with me playing versions of Niagara and Buffalo Sniper.
+	<p>
+	Now the Weekender have decided to run a local chart. It works like this: you visit their website, you check out tunes
+	by various local acts and then you vote for your favourite.
+	<p>
+	For the month of October Wilson are among the short-listed bands. The tune is our rousing tribute to John the Baptist,
+	Istanbul Connection. Now, in the grand tradition of Florida electoral process, Wilson have decided that they are going
+	to win this one, and this is where you come in.
+	<p>
+	Please, take a minute of your day and
+	${linkExternal(http://www.bbc.co.uk/northamptonshire/content/articles/2004/08/04/weekender_chart_vote_feature.shtml,
+	go vote for Wilson)}
+	<p>
+	You can vote any time during October. So please, music lovers - vote early, vote often!
+	Let's make Wilson Number One in NN1.
+	<p>
+	Headstone
+
+#define	news[29]->date 2004-09-16
+#define	news[29]->item
+	Headstone will be interviewed live on the BBC Radio Northampton show "Weekender" on Friday 17th September
+	2004.
+	The show, which runs from 6:00 to 7:00 o'clock every Friday evening, will be coming live from the
+	Roadmender in Northampton NN1, featuring live music from a number of local bands.
+	${linkExternal(http://www.bbc.co.uk/northamptonshire/music)}
+#define	news[28]->date 2004-09-13
+#define	news[28]->item
+	It's an overcast Sunday afternoon in Northampton. At the Cricket Club they are staging the first Tom
+	Hall Memorial Cricket-for-All Challenge Tournament. In Abington Park there is a Gay Pride knees-up with
+	bands and stuff. I am sitting in an otherwise empty Racehorse bar, my Burns in my lap, struggling to free
+	the ball end of a broken 10 string from
+	<a href="${gigs}/2004/Sep12.html">the body of the guitar.</a>
+#define	news[27]->date 2004-08-19
+#define	news[27]->item
+	Congratulations to MC Bot and Tamsin on the birth of their daughter,
+	Freya Violet Joy, Wednesday 18th August 2004
+
+#define	news[26]->date 2004-07-02
+#define	news[26]->item
+	Another Wilson gig appears. We've been asked to play the Racehorse front bar on
+	<a href="${gigs}/2004/Jul25.html">Sunday 25th July.</a>  So we shall. And it will be free.
+
+#define	news[25]->date 2004-05-12
+#define	news[25]->item
+	Wilson Involved in Festival with Hard-to-Understand Name
+	<p>
+	As part of the Twinfest cultural exchange knees-up, where bands from our twin towns of
+	Poitiers and Marburg come to play in Northampton, Wilson will be playing at an event
+	called SPONGE.
+	Wilson remain unclear as to the exact nature of SPONGE at this stage, but we believe it
+	to be an open-air event taking place in Becket's Park in Central Northampton on the
+	afternoon of <a href="${gigs}/2004/Jun6.html">Sunday 6th June.</a>
+	More news on this one as it comes up.
+
+#define	news[24]->date 2004-04-15
+#define	news[24]->item
+	Masters of Budvar, Headstone's guerilla promotions operation, are hosting a gig by our good friend
+	from Leeds, D. Millard.
+	D. Millard will be playing at The Racehorse, Northampton NN1 on Sunday 9th May 2004. Admission is
+	free.
+	<p>
+	Once seen never forgotten, D. Millard is a
+	dapper young solo performer who plays guitar and
+	keyboards. His uniquely
+	bitter n' twisted worldview is stamped all over monster tunes like "Religion Out", "James Bond is an
+	Upper Class Copper", "Drugs Versus Sport" and, of course, the truly monumental "Don't Write a Song
+	About It". You'll laugh, you'll cry, you'll hurl.
+	But you won't pay to get in.
+	<p>
+	www.dmillard.co.uk
+
+#define	news[23]->date 2004-03-14
+#define	news[23]->item
+	Long ago, in a pub very far away, they did occasionally have a band on in the Racehorse bar of a Tuesday
+	night. I can just about recall seeing quite a tidy band there, named Skuravi after the stylish Czech
+	striker of the day. That would have been about 1992. But for years now it's been the same: you just don't
+	get bands on in the Racehorse bar of a tuesday night.
+	<p>
+	<a href="${gigs}/2004/May4.html">Until, that is, now.</a>
+#define	news[22]->date 2004-03-03
+#define	news[22]->item
+	Headstone's been busy at the old typewriter:
+	<a href="${gigs}/2004/Feb26.html">Moles Club gig review</a>,
+	<a href="${gigs}/2004/Feb27.html">The Folk House gig review</a>, and
+	<a href="${gigs}/2004/Feb28.html">The Labour Club gig review</a>
+#define	news[21]->date 2004-02-14
+#define	news[21]->item
+Well, the Romanian benefit at the Racehorse passed off well. It was a warm and friendly night out, with
+an awful lot of faces rallying round to raise money for the Fred Ryan's guerilla hospice-building
+operation and the Lovelight Romanian Children's Project. There was even a raffle!
+<a href="${gigs}/2004/Feb13.html">More...</a>
+#define	news[20]->date 2004-01-25
+#define	news[20]->item
+	<a href="${gigs}/2004/Feb13.html"><img align="right" hspace=5
+		src="${images}/2004Feb13/poster_2004Feb13_small.jpg" width=200 height=300></a>
+	A couple of positive developments on the
+	<a href="${gigs}/2004/Feb13.html">Romanian benefit at the Rockin' Horse.</a>
+	First off, the bar will be open late. (Notice how this is becoming something of a trend
+	at Wilson's Northampton performances? This town is on the move, subtly shapeshifting
+	into the new Barcelona. Oi, New Yorkers - you can smoke in the pubs here. Ha! Ha! Ha!
+#	Ha! Ha! Oh, and from next week you can smoke a joint too. Aaaaaah Ha! Ha! Ha! Ha! Ha!
+	Ha! Ha! Ha! Ooooh-Ho! Ho! Ho! Security!)
+	<p>
+	Second off, because there is more time, we're adding another band to the bill, namely
+	the very fine young band called
+	A Fat Dog Sound.
+	<p>
+	So for your fiver you now get 4 top groups, a magisterial DJ and a late bar.
+	Beats Live Aid.
+#define	news[19]->date 2004-01-13
+#define	news[19]->item
+	It appears that Fred Ryan, the proprietor of <a href="${gigs}/2002/Sep21.html">those</a> legendary Welsh
+	<a href="${gigs}/2003/Aug23.html">parties</a>, is going to
+	Romania to build a hostel for sick children. Benefit concerts in Northampton and Builth Wells will be
+	announced soon.
+#define	news[18]->date 2003-12-30
+#define	news[18]->item
+	A return to action for the Wilson Five, as Mister E. Wilson succumbs to the slumber-related
+	after-effects of a festive feed.
+	With the Rocket Hi-Fi boys unable to make it, DJ Ethan comes to the rescue (direct from the hospital)
+	with a top set of dirty breakbeats, house and shouting. The night is free, the room fills up. In the
+	cupboard beside the stage there is a dense fog.
+	<p>
+	<a href="${gigs}/2003/Dec24.html">The rest of the story...</a>
+
+#define	news[17]->date 2003-12-14
+#define	news[17]->item
+	Greetings from the geriatric ward...
+	<p>
+	This has not been Headstone's week. First the fool managed to up-end himself, tripping over his treasured
+	skinning-up granite and sailing through the air with Klinnsman-like grace (Arsene Wenger is reported to have said "I
+	did not see eet"). This left him with a massive limp. Then he caught the flu.
+	<p>
+	<a href="${gigs}/2003/Dec13.html">The rest of the story...</a>
+
+#define	news[16]->date 2003-11-06
+#define	news[16]->item
+	Well, nobody got arrested <a href="${gigs}/2003/Nov5.html">last night</a>
+	, and our comical home-made PA held up too. We ran everything (DAT machine; PA amp;
+	Mixing desk; Bass Amp; 2 Guitar amps; Curtis' Amp; Curtis' Air-FX; Curtis' Delay; Pat's Delay; Pat's tube-in-a-box) off
+	one power socket (now you couldn't do that in America, now could you?) Went down very well, all things considered. (Curtis
+	on ecstasy? Perish the very thought...) We played pretty early (about 9:15 to 10:00) so as to avoid too much neighourhood
+	grief, which did mean that a few of the hardcore only bowled up as we were dismantling our kit. Sorry about that...
+	<p>
+	Among the party-goers was Andy Skank, who is single-handedly turning the Labour Club into quite a happening place. As part
+	of his ongoing campaign to bring Groove to the Government, he offered us a couple of gigs there.
+#define	news[15]->date 2003-09-02
+#define	news[15]->item
+	Well, it's finally happened. We've been holding out on the capital for
+	2 years now. We didn't want to play in some indie dullard basement with
+	sticky carpets and 19 year-old trustafarian shitheads on the bill, but the wait
+	has been worth it.
+	<p>
+	<a href="${gigs}/2003/Oct16.html">We are playing at a club night called For Your Pleasure</a>,
+	which takes place at Cargo, 83 Rivington Street,
+	Shoreditch, London EC2. It's well central, and is supposed to have one
+	of the best sound systems in the country.  Should be a top night.
+	<p>
+	<b>Wilson Executive Travel</b>
+	<p>
+	The bus to Cargo is now fully booked.
+	It will leave from The Racehorse, Abington Square NN1 at 6:30 sharp on Thursday 16th.
+	Bus fare £5:00. Gig entrance £5:00 (special rate for bus riders - normal entrance £8:00)
+
+#define	news[14]->date 2003-08-28
+#define	news[14]->item
+	Regular readers might recall that last October, just when the band was
+	starting to get good, we headed out in convoy to Builth Wells in Mid
+	Wales for a gig at one of Fred's legendary parties. It was a memorable
+	evening, but the members of the posse who don't eat meat did have one
+	small problem, what with curried goat being the dish of the day.
+	<a href="${gigs}/2003/Aug23.html">Your correspondent had a whale of a time</a>
+	on a diet of Liquorice Allsorts, as it goes.
+
+#define	news[13]->date 2003-08-21
+#define	news[13]->item
+	We've got a new intro to our set. With sheep. And rain.
+	Yes, we're on our way to Wales this weekend for a
+	<a href="${gigs}/2003/Aug23.html">Fred's Farm Special</a>...
+	<p>
+	<a href="${gigs}/2003/Aug23.html"><img src="${images}/2003Aug23/map.gif" width="515" height="542" alt="map" border=0></a>
+
+#define	news[12]->date 2003-07-28
+#define	news[12]->item
+	Stevie G returned from working in Leicester last week to find that his
+	clueless flatmates had gone and spent about three hundred pounds of
+	Steve's own money on a nice holiday for him. They had cheerfully ignored his
+	suggestions that a trip to Turkey starting on Monday might be just the
+	ticket. Instead, they booked him onto a holiday trip that departed on Saturday morning.
+	<p>
+	<a href="${gigs}/2003/Jul27.html">the rest of the gig report</a>..
+
+#define	news[11]->date 2003-07-21
+#define	news[11]->item
+	<b>Gig: Sunday 27th July 2003</b>
+	<p>
+	At rehearsal last night "Secret Government" returned to the set after a lengthy period away. It's back,
+	but with a definite soupcon of the UK Garage about the instrumentals. We are unable to disclose the
+	source of this development, and rumours of Mr. E. Wilson taking a "nice long walk in the woods" with the
+	security services are - we can assure you - entirely unfounded.
+	<p>
+	Johnny P. will be in attendance with his astonishing lights. We shall also be featuring Barry Hale of
+	the Don't Look Now Film Collective, who will be showing the very first Russian footage taken in space!
+	<p>
+	<b>More gigs:</b>
+	<p>
+	Wilson will be hitting the road again in August 2003 for a weekend of Home International mayhem.
+	<p>
+	We will be at Weedon Village Hall on Friday 22nd August. Entry by invitation only! If your name's not
+	down, you ain't coming in!
+	<p>
+	Then we shall return to Builth Wells in Wales for a 6 band extravaganza on Saturday 23rd August. This
+	show will also feature the exellent P-Hex, Wiggy Bot (Northampton's own Stooges tribute riot) and three
+	Welsh bands.
+	<p>
+	Wilson will be playing at the Green Festival in Abington Park, Northampton on Sunday 7th September 2003
+	(12:00-6:00pm).
+	<p>
+	That's it for now.
+
+#define	news[10]->date 2003-07-15
+#define	news[10]->item
+	Wilson have been invited to appear on the next co-op compilation (as
+	they are called) from Heyday Records of California. So ${quality_people}
+	will be the first thing by the band to be released. The album,
+	which also features David J (!) and Marty Wilson-Piper, will be out in a few
+	weeks. More as it comes up, but meanwhile you can take a look at:
+	${linkExternal(http://www.heyday.com)}
+
+#define	news[9]->date 2003-05-05
+#define	news[9]->item
+	<a href="${gigs}/2003/May4.html"><img
+	        src="${images}/2003May4/250_JawaDarthWookie.jpg" align="right" hspace="5" width=250 height=167" alt="[pic]"></a>
+	<a href="${gigs}/2003/May4.html">Steve wore the wookie suit.</a>
+	And Russ wore the Darth Vader outfit, yes, even the helmet. I couldn't believe how long he
+	managed to keep it on!
+	Bot was Han Solo, re-interpreted as some manner of post-Cobain existentialist interplanetary
+	hooligan outlaw.
+	Mister E. Wilson and Headstone came out dresed in full-on monk outfits, Headstone allegedly "The
+	Emperor".
+	<br clear="all">
+
+#define	news[8]->date 2003-04-25
+#define	news[8]->item
+	Star Wars day, apparently...will ${steve} really dress up as a wookie?
+	Where do you get that kind of gear?
+	${russ} suggested renting him a bear suit and throwing him to some dogs.
+	He'd probably end up making the right sort of noises, at least.
+	<p>
+	<b>update</b>
+	Wilson go E-Bay. While Headstone pursues a match-worn Tottenham shirt bearing the legend 16 - WILSON on the back,
+	Stevie G is seeking a reasonably-priced Wookie suit. Worse, Agent Cooper has found him one. In Canada.
+	<p>
+	Johnny P has signed up to do the lights for the
+	<a href="${gigs}/2003/May4.html">Racehorse on May 4th.</a>, delighting us all. Movies, the lot.
+
+#define	news[7]->date 2003-04-22
+#define	news[7]->item
+	Well, the Nazis got smashed once again, and later (in our own little way) so did we.
+	<p>
+	Eaglehead went on first and played a blinder. Unfortunately, nobody gave them any idea as to when to stop.
+	They eventually finished with a ferocious cover of "These Boots Are Made for Walking", while Pig Unit and
+	Wilson shuffled around nervously, wondering how the hell they were supposed to squeeze their sets into the
+	sixty minutes that remained before closing time.
+	<a href="${gigs}/2003/Apr19.html">more...</a>
+
+#define	news[6]->date 2003-04-16
+#define	news[6]->item
+	We never escape. Every time we play Leeds on a Friday we are confronted with the Wankers' Parade,
+	proof positive that a transport system reliant almost entirely upon private cars is already
+	discredited, doomed, dull, dirty, dreary and shat.
+	<a href="${gigs}/2003/Apr11.html">more...</a>
+
+#define	news[5]->date 2003-04-01
+#define	news[5]->item
+	<a href="${gigs}/2003/Mar29.html">The Labour Club show</a> went well, with a nice turn-out and a good
+	vibe in the room. We sold all the copies of "Istanbul Connection"
+	that we brought with us. Andy Skank played all the punk rock songs
+	about war that he could think of. How long since you last heard
+	the Stranglers singing <i>"I can drive my very own tank"?</i>
+	<p>
+	The 2 new
+	tunes worked well and we played 2 encores. Afterwards we had a
+	fine party at Misery's yard.
+	<p>
+	There have been changes to the bill at
+	<a href="${gigs}/2003/Apr11.html">the Brudenell Social Club</a>
+	on 11th April.	The confirmed line-up is now: Wilson; Sammy USA
+	(hotly tipped, I'm told); the very wonderful D. Millard; Random
+	Number; and The Unpleasants.There will be two stages. Expect
+	Wilson on in the middle of the evening, around 9:00 o'clock,
+	perhaps.
+
+#define	news[4]->date 2003-03-25
+#define	news[4]->item
+	Our CD single, Istanbul Connection b/w Quality People will be available from our gig at the Labour Club on 29th
+	March.
+	<p>
+	If we were younger people, we might call it a "record release party".
+	<p>
+	But it's not.
+	<p>
+	It's a squalid, loud, stinky little sociopaths' hoedown in a hot, cramped,
+	smoky little room on a backstreet in the Murder Mecca of the Midlands
+	("Triple M" to the in-crowd) on a Saturday night in the middle of an
+	illegal war. It may be a little frightening at times.
+	But, hey! The records are tops and they only cost two of your English Pounds. What do you want from life?
+	<p>
+	People who can lay convincing claim to having a bar or a club where we can play, or to representing a recording
+	company,
+	can e-mail us via ${linkExternal(freeshit\@wilsondub.com)} for a free copy.
+#define	news[3]->date 2003-02-06
+#define	news[3]->item
+	Istanbul and Quality People are the tunes we have recorded with Donald Ross
+	Skinner.
+	They'll be finished and in the post by the end of the month.
+	<p>
+#define	news[2]->date 2003-01-24
+#define	news[2]->item
+	We are finishing off our "proper" recording on 3rd February, so copies
+	should be winging their way around the globe by mid-Feb.
+	<p>
+#define	news[1]->date 2002-11-16
+#define	news[1]->item
+	Planning on entering a studio in December with Donald Ross Skinner (of Copey infamy) producing.
+	Looking forward to that, as I'm sure you can imagine.
+
+#define	recentNews
+	<b>NN1 News Update:</b><br>
+	<font size=1>(posted ${date(l\, F jS\, Y, ${news[${maxNews}]->date})})</font>
+	<blockquote>
+	${news[${maxNews}]->item}
+	<p>
+	<b><a href="${news}">All News..</a></b>
+	</blockquote>
+
+#define	randImg1	warfare/thumb_misery.jpg
+#define	randImg2	warfare/thumb_eman.jpg
+#define	randImg3	warfare/thumb_bottie.jpg
+#define	randImg4	warfare/thumb_russ.jpg
+#define	randImg5	warfare/thumb_stevieg.jpg
+#define	randImg6	warfare/thumb_headstone.jpg
+#define	randImg7	warfare/image019.jpg
+#define	randImg8	warfare/image018.jpg
+#define	randImg9	2002Jan31/Boatrace_250.jpg
+#define	randImg10	2002Mar30/250_2002Mar30.jpg
+#define	randImg11	2003May4/250_EmperorHansSolo.jpg
+#define	randImg12	2003May4/250_EmperorWookie.jpg
+#define	randImg13	2003May4/250_JawaDarthWookie.jpg
+#define	randImg14	2003May4/250_NurseChapel.jpg
+#define	randImg15	2003May4/250_WookieDance.jpg
+#define	randImg16	2003May4/250_Wilson3.jpg
+#define	randImg17	2003May4/250_Wilson6.jpg
+#define	randImg18	2003May4/250_Wilson10.jpg
+#define	randImg19	2003May4/250_Wilson11.jpg
+#define	randImg20	2003May4/250_Wilson15.jpg
+#define	randImg21	2003May4/250_EmperorNurseChapel.jpg
+#define	randImg22	2003May4/250_JawaBongoDarth.jpg
+#define	randImg23	2003May4/250_Wilson4.jpg
+#define	randImg24	2003May4/250_Wilson5.jpg
+#define	randImg25	2003May4/250_Wilson7.jpg
+#define	randImg26	2003May4/250_Wilson8.jpg
+#define	randImg27	2003May4/250_Wilson9.jpg
+#define	randImg28	2003May4/250_Wilson12.jpg
+#define	randImg29	2003May4/250_Wilson13.jpg
+#define	randImg30	2003May4/250_Wilson14.jpg
+#define	randImg31	2003CoonceVacation/250_DSC02927.JPG
+#define	randImg32	2003CoonceVacation/250_DSC02928.JPG
+#define	randImg33	2003CoonceVacation/250_DSC02931.JPG
+#define	randImg34	2003CoonceVacation/250_DSC02932.JPG
+#define	randImg35	2003CoonceVacation/250_DSC02959.JPG
+#define	randImg36	2003CoonceVacation/250_DSC02934.JPG
+#define	randImg37	2003CoonceVacation/250_DSC02935.JPG
+#define	randImg38	2003CoonceVacation/250_DSC02937.JPG
+#define	randImg39	2003CoonceVacation/250_DSC02938.JPG
+#define	randImg40	2003CoonceVacation/250_DSC02939.JPG
+#define	randImg41	2003CoonceVacation/250_DSC02940.JPG
+#define	randImg42	2003CoonceVacation/250_DSC02948.JPG
+#define	randImg43	2003CoonceVacation/250_DSC02956.JPG
+#define	randImg44	2003CoonceVacation/250_DSC02943.JPG
+#define	randImg45	2003CoonceVacation/250_DSC02946.JPG
+#define	randImg46	2003CoonceVacation/250_DSC02950.JPG
+#define	randImg47	2003CoonceVacation/250_DSC02951.JPG
+#define	randImg48	2003CoonceVacation/250_DSC02930.JPG
+#define	randImg49	2003Oct16/Bott_cargo1.jpg
+#define	randImg50	2003Oct16/Bott_cargo2.jpg
+#define	randImg51	2003Oct16/Bott_cargo3.jpg
+#define	randImg52	2003Oct16/Kath_cargo.jpg
+#define	randImg53	2003Oct16/Pat_cargo.jpg
+#define	randImg54	2003Oct16/wilson_cargo.jpg
+#define	randImg55	2003Dec24/3WiseWilsons.jpg
+#define	randImg56	2003Dec24/PatSaddamAndSteve.jpg
+#define	randImg57	2003Dec24/SaddamsXmas.jpg
+#define	randImg58	2003Dec24/HeadsOfState.jpg
+#define	randImg59	2003Dec24/PatUsesTeleToCaptureSaddam.jpg
+#define	randImg60	2002Sep20/poster_2002Sep20_small.jpg
+#define	randImg61	2002Sep21/poster_2002Sep21_small.jpg
+#define	randImg62	2002Aug25/poster_2002Aug25_small.gif
+#define	randImg63	2002Oct12/poster_2002Oct12_small.jpg
+#define	randImg64	2002Dec8/poster_2002Dec8_small.jpg
+#define	randImg65	2003Mar29/poster_2003Mar29_small.jpg
+#define	randImg66	2003Apr19/poster_2003Apr19_small.gif
+#define	randImg67	2003May4/poster_2003May4_small.jpg
+#define	randImg68	2003Jun11/poster_2003Jun11_small.jpg
+#define	randImg69	2003Dec24/poster_2003Dec24_small.jpg
+#define	randImg70	2003Dec24/poster_2003Dec24_small.gif
+#define	randImg71	2004Feb13/poster_2004Feb13_small.jpg
+#define	randImg72	2004Feb28/poster_2004Feb28_small.jpg
+#define	randImg73	2004May4/poster_2004May4_small.jpg
+#define	randImg74	2004Apr17/poster_2004Apr17_small.jpg
+#define	randImg75	2004Feb13/250_fundraiser001.jpg
+#define	randImg76	2004Feb13/250_fundraiser011.jpg
+#define	randImg77	2004Feb13/250_fundraiser051.jpg
+#define	randImg78	2004Feb13/250_fundraiser049.jpg
+#define	randImg79	2004Feb13/250_fundraiser007.jpg
+#define	randImg80	2004Feb13/250_fundraiser053.jpg
+#define	randImg81	2004Feb13/250_fundraiser025.jpg
+#define	randImg82	2004Feb13/250_fundraiser037.jpg
+#define	randImg83	2004Apr30/250_Builth1.jpg
+#define	randImg84	2004Apr30/250_Builth2.jpg
+#define	randImg85	2004Apr30/250_Builth3.jpg
+#define	randImg86	2004Apr30/250_Builth4.jpg
+#define	randImg87	2004Apr30/250_Builth5.jpg
+#define	randImg88	2004Apr30/250_BuilthMiz.jpg
+#define	randImg89	2004Apr30/250_BuilthPatIan.jpg
+#define	randImg90	2004Apr30/250_BuilthPatMiz.jpg
+#define	randImg91	2004Apr30/250_BuilthRuss.jpg
+#define	randImg92	2004Apr30/stevebacon2_small.jpg
+#define	randImg93	2004Feb28/LabourClub_small.jpg
+#define	randImg94	2004Feb28/LabourClub3_small.jpg
+#define	randImg95	2004Feb28/PatL-Club_small.jpg
+#define	randImg96	2004May4/4maygroup_small.jpg
+#define	randImg97	2004May4/4mayShouting_small.jpg
+#define	randImg98	2004May4/4mayRock_small.jpg
+#define	randImg99	2004May4/4maySunburst_small.jpg
+#define	randImg100	2004May4/May4Band_small.jpg
+#define	randImg101	2004May4/May4pub_small.jpg
+#define	randImg102	2004May4/May4Bot_small.jpg
+#define	randImg103	2004Sep12/cricketpress_small.jpg
+#define	randImg104	2004Dec5/poster_2004Dec5_small.jpg
+
+#define	fetchRandImage()	<a href="/"><img src="${images}/${randImg${random(104)}}" width=130 height=106 alt="" border=0></a>
+
+#define	alligator				<i>Alligator</i>
+#define	somali_buttkick			<i>Somali Buttkick</i>
+#define	no_winners				${linkWilsonSong(title=No Winners, href=${lyrics}/no_winners.html)}
+#define	battle_time_now			${linkWilsonSong(title=Battle Time Now, href=${lyrics}/battle_time_now.html)}
+#define	buffalo_sniper			${linkWilsonSong(title=Buffalo Sniper, href=${lyrics}/buffalo_sniper.html,
+									mp3=/audio/2005Nov_Demo/Wilson-Buffalo_Sniper.mp3)}
+#define	police_chief			${linkWilsonSong(title=Police Chief, href=${lyrics}/police_chief.html,
+									mp3=/audio/2005Nov_Demo/Wilson-Police_Chief.mp3)}
+#define	every_saturday_night	${linkWilsonSong(title=Every Saturday Night, href=${lyrics}/every_saturday_night.html)}
+#define	yellow_pages			${linkWilsonSong(title=Yellow Pages, href=${lyrics}/yellow_pages.html)}
+#define	hippy_shit				${linkWilsonSong(title=Hippy Shit, href=${lyrics}/hippy_shit.html)}
+#define	critters				${linkWilsonSong(title=Critters, href=${lyrics}/critters.html)}
+#define	secret_government		${linkWilsonSong(title=Secret Government, href=${lyrics}/secret_government.html)}
+#define	burn_hollywood_burn		${linkWilsonSong(title=Burn\, Hollywood\, Burn, href=${lyrics}/burn_hollywood_burn.html)}
+#define	quality_people			${linkWilsonSong(title=Quality People, href=${lyrics}/quality_people.html,
+									mp3=/audio/2003Apr_Demo/Quality_People.mp3)}
+#define	istanbul_connection		${linkWilsonSong(mp3=/audio/2003Apr_Demo/Istanbul_Connection.mp3, title=Istanbul Connection, href=${lyrics}/istanbul_connection.html)}
+#define	dark_agenda				${linkWilsonSong(title=Dark Agenda, href=${lyrics}/dark_agenda.html)}
+#define	gods_green_earth	<i>God's Green Earth</i>
+#define	running_out	<i>Running Out</i>
+#define	sweet_home_alabama	<i>Sweet Home Alabama</i>
+#define	trouble_every_day	<i>Trouble Every Day</i>
+#define	play_it_all_night_long	<i>Play It All Night Long</i>
+#define	We_Love_You	<i>We Love You</i>
+
+#define	mkAudioIcon(title)
+	<img height="11" width="11" alt="[listen to ${title}]" border="0" src="${icons}/iconStream.gif" hspace="2">
+#define	mkMP3Icon(title)
+	<img height="9" width="19" alt="[listen to ${title}]" border="0" src="${icons}/iconMP3.gif" hspace="2">
+
+#define	linkWilsonSong(title, href, audio, mp3)
+#live	if ((defined(mp3)) && (defined(href)))
+	<a href="${mp3}">${mkMP3Icon(title=${literalizeCommas(${title})})}</a><a href="${href}"><i>${title}</i></a>
+#live	else if ((defined(mp3)) && (defined(title)))
+	<a href="${mp3}">${mkMP3Icon(title=${literalizeCommas(${title})})}</a><i>${title}</i>
+#live	else if ((defined(audio)) && (defined(href)))
+	<a href="${audio}">${mkAudioIcon(title=${literalizeCommas(${title})})}</a><a href="${href}"><i>${title}</i></a>
+#live	else if ((defined(audio)) && (defined(title)))
+	<a href="${audio}">${mkAudioIcon(title=${literalizeCommas(${title})})}</a><i>${title}</i>
+#live	else if (defined(href))
+	<a href="${href}"><i>${title}</i></a>
+#live	else
+	<i>${title}</i>
+#live	endif

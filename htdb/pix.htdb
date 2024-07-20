@@ -1,0 +1,46 @@
+#define	2003coonce.html
+	${mkWilsonHeader(section=Press)}
+	<h2>
+	${linkExternal(http://www.kerosenebomb.com/wilson/, (Kalifornian) Cole Coonce's 2003 Holiday to Northampton)}
+	</h2>
+	<table border=0 bgcolor="#000000" width="100%"><tr><td align="center">
+	<a href="${images}/2003CoonceVacation/DSC02926.JPG"><img
+		border=0 width=250 height=333 src="${images}/2003CoonceVacation/250_DSC02926.JPG"></a>
+	<a href="${images}/2003CoonceVacation/DSC02927.JPG"><img
+		border=0 width=250 height=333 src="${images}/2003CoonceVacation/250_DSC02927.JPG"></a>
+	<a href="${images}/2003CoonceVacation/DSC02928.JPG"><img
+		border=0 width=250 height=333 src="${images}/2003CoonceVacation/250_DSC02928.JPG"></a>
+	<a href="${images}/2003CoonceVacation/DSC02931.JPG"><img
+		border=0 width=250 height=333 src="${images}/2003CoonceVacation/250_DSC02931.JPG"></a>
+	<a href="${images}/2003CoonceVacation/DSC02932.JPG"><img
+		border=0 width=250 height=333 src="${images}/2003CoonceVacation/250_DSC02932.JPG"></a>
+	<a href="${images}/2003CoonceVacation/DSC02959.JPG"><img
+		border=0 width=250 height=333 src="${images}/2003CoonceVacation/250_DSC02959.JPG"></a>
+	<a href="${images}/2003CoonceVacation/DSC02934.JPG"><img
+		border=0 width=250 height=333 src="${images}/2003CoonceVacation/250_DSC02934.JPG"></a>
+	<a href="${images}/2003CoonceVacation/DSC02935.JPG"><img
+		border=0 width=250 height=333 src="${images}/2003CoonceVacation/250_DSC02935.JPG"></a>
+	<a href="${images}/2003CoonceVacation/DSC02937.JPG"><img
+		border=0 width=250 height=333 src="${images}/2003CoonceVacation/250_DSC02937.JPG"></a>
+	<a href="${images}/2003CoonceVacation/DSC02938.JPG"><img
+		border=0 width=250 height=333 src="${images}/2003CoonceVacation/250_DSC02938.JPG"></a>
+	<a href="${images}/2003CoonceVacation/DSC02939.JPG"><img
+		border=0 width=250 height=333 src="${images}/2003CoonceVacation/250_DSC02939.JPG"></a>
+	<a href="${images}/2003CoonceVacation/DSC02940.JPG"><img
+		border=0 width=250 height=333 src="${images}/2003CoonceVacation/250_DSC02940.JPG"></a>
+	<a href="${images}/2003CoonceVacation/DSC02948.JPG"><img
+		border=0 width=250 height=333 src="${images}/2003CoonceVacation/250_DSC02948.JPG"></a>
+	<a href="${images}/2003CoonceVacation/DSC02956.JPG"><img
+		border=0 width=250 height=333 src="${images}/2003CoonceVacation/250_DSC02956.JPG"></a>
+	<a href="${images}/2003CoonceVacation/DSC02943.JPG"><img
+		border=0 width=250 height=188 src="${images}/2003CoonceVacation/250_DSC02943.JPG"></a>
+	<a href="${images}/2003CoonceVacation/DSC02946.JPG"><img
+		border=0 width=250 height=188 src="${images}/2003CoonceVacation/250_DSC02946.JPG"></a>
+	<a href="${images}/2003CoonceVacation/DSC02950.JPG"><img
+		border=0 width=250 height=188 src="${images}/2003CoonceVacation/250_DSC02950.JPG"></a>
+	<a href="${images}/2003CoonceVacation/DSC02951.JPG"><img
+		border=0 width=250 height=188 src="${images}/2003CoonceVacation/250_DSC02951.JPG"></a>
+	<a href="${images}/2003CoonceVacation/DSC02930.JPG"><img
+		border=0 width=250 height=188 src="${images}/2003CoonceVacation/250_DSC02930.JPG"></a>
+	</td></tr></table>
+	${footer}

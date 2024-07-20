@@ -1,0 +1,95 @@
+#define	index.html
+	${mkWilsonHeader(section=Gigs)}
+
+	<b>February</b>
+	<dl>
+	${mkWilsonGigLink(year=2007, mon=Feb, day=18, venue=The Racehorse, adress=Abington Square, city=Northampton, country=England, notes=free)}
+	</dl>
+	<b>March</b>
+	<dl>
+	${mkWilsonGigLink(year=2007, mon=Mar, day=25, venue=The Roadmender, city=Northampton, country=England, notes=benefit concert)}
+	</dl>
+	<b>April</b>
+	<dl>
+	${mkWilsonGigLink(year=2007, mon=Apr, day=6, venue=The Labour Club, city=Northampton, country=England, notes="Masters Of Budvar")}
+	</dl>
+	<b>November</b>
+	<dl>
+	${mkWilsonGigLink(year=2007, mon=Nov, day=16, venue=The Labour Club, city=Northampton, country=England, notes=free)}
+	</dl>
+	<b>December</b>
+	<dl>
+	${mkWilsonGigLink(year=2007, mon=Dec, day=22, venue=Dirty South, address=162 Lee High Road, city=London, country=England, notes=10:30pm)}
+	</dl>
+
+	${footer}
+
+#define	Feb18.html
+	${mkWilsonHeader(section=Gigs, title=2007)}
+
+	${g_venue} The Racehorse
+	${g_town} Northampton ${UK}
+	${g_date} ${mkWilsonGigDate()}
+	${notes_beg}
+	Free
+	${notes_end}
+	${footer}
+
+#define	Mar25.html
+	${mkWilsonHeader(section=Gigs, title=2007)}
+
+	${g_venue} The Roadmender
+	${g_town} Northampton ${UK}
+	${g_date} ${mkWilsonGigDate()}
+	${notes_beg}
+	Wilson will be playing at THE ROADMENDER, Northampton NN1 on SUNDAY 25th MARCH.                                              
+	<p>
+	The show is an all-day benefit concert for the Cambodian Kids Project, which basically takes care of orphans in that         
+	country. Details to follow when we have them.
+	${notes_end}
+	${footer}
+
+#define	Apr6.html
+	${mkWilsonHeader(section=Gigs, title=2007)}
+
+	${g_venue} The Labour Club
+	${g_town} Northampton ${UK}
+	${g_date} ${mkWilsonGigDate()}
+	${notes_beg}
+	WILSON (Northampton NN1) + THEY CAME FROM THE STARS I SAW THEM (London) + Superstar DJ JOE WOOLLEY.
+	${notes_end}
+	${footer}
+
+#define	Nov16.html
+	${mkWilsonHeader(section=Gigs, title=2007)}
+
+	${g_venue} The Labour Club
+	${g_town} Northampton ${UK}
+	${g_date} ${mkWilsonGigDate()}
+	${notes_beg}
+	Free admission
+	${notes_end}
+	${footer}
+
+#define	Dec22.html
+	${mkWilsonHeader(section=Gigs, title=2007)}
+
+	<a href="${images}/2007Dec22/20071222_poster.jpg"><img
+		src="${images}/2007Dec22/20071222_poster_200.jpg"
+		width=200 height=231 align="right" hspace="5" vspace="5"></a>
+
+	${g_venue} Dirty South
+	${g_address} 162 Lee High Road, Lewisham
+	${g_town} London ${UK} SE13 5PR
+	${g_date} ${mkWilsonGigDate()}
+	${notes_beg}
+	Hot Wilson gig news.
+	Saturday 22nd December Wilson are opening for the Alabama 3 at Dirty South, 162 Lee High Road, Lewisham, London SE13 5PR. 8:00pm
+	til 2:00am. Wilson onstage at 10:30pm.
+	BR or Dockland Light Railway station: Lewisham. Buses: 185, 178, 261, 321, 122, 273, 202.
+	${linkExternal(http://www.dirtysouthlondon.com)}
+	Wilson have 50 tickets for this event, going at the stupidly low price of £6:00 each. Available from the band. We'll be setting up 
+	an online service within the week. More on that as it comes up. Meanwhile, feel free to contact us for tickets.
+	${linkExternal(http://www.myspace.com/wilsondub)}
+	${notes_end}
+	${footer}

@@ -1,0 +1,24 @@
+#define	index.html
+	${mkWilsonHeader(section=Audio)}
+	<b>November 2005 Demo tracks</b>
+	<blockquote>
+	Recorded at Premier Studio ${linkExternal(http://www.premierstudios.co.uk)}
+	<p>
+	${police_chief}<br>
+	${buffalo_sniper}
+	</blockquote>
+	<hr>
+	<b>Here are some (purposefully low-bitrate) MP3s for your aural bewilderment</b>
+	<blockquote>
+	<i>"Recorded at Notepad, NW10 by Andy Parker.
+	<br>
+	Produced by Donald Ross Skinner.
+	<br>
+	All tunes conceived, devised & assembled by Wilson.
+	<br>
+	Tracks contain elements of everything."</i>
+	<p>
+	${quality_people}<br>
+	${istanbul_connection} <br>
+	</blockquote>
+	${footer}

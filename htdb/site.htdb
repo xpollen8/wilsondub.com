@@ -1,0 +1,107 @@
+#define	index.html
+	${mkWilsonHeader(section=Home)}
+##live	if (random(2) = 1)
+#	<a href="${images}/bandphoto.jpg"><img
+#		border=0 src="${images}/bandphoto_200.jpg" width=200 height=138 align="right" hspace=5></a>
+##live	else
+#	<a href="${images}/wokyprint1.jpg"><img
+#		border=0 src="${images}/wokyprint1_200.jpg" width=200 height=194 align="right" hspace=5></a>
+##live	endif
+#	${recentNews}
+#	<p>
+#	<center>
+#	${linkInternal(${audio}, <img src="${images}/Atigerwilson.jpg" width="200" height="419">)}
+#	</center>
+#	<p>
+#	<img border=0 src="${images}/buster/${random(4)}.jpg"  width=438 height=140>
+#	<p>
+	<br clear=all>
+The Wilson DVD, entitled No Known Predators, is to be released on Friday 7th September 2012.
+<p>
+To celebrate, Wilson will be reforming for a special one-off show at The Picturedrome, Kettering Road, Northampton NN1 on
+<a href="/htdb/gigs/2012/Sep7.html">Friday 7th September 2012.</a><p>
+Tickets for the event cost £2:50, exactly the same as at Wilson's very first show in March 2001. 
+<p>
+The DVD will be available to buy at the Picturedrome show.
+Further availability details to follow.
+<p>
+Cheers,
+Pat x    
+<hr>
+	The DVD went off to the manufacturers today. Will definitely be out this summer.
+	I've set up a Farcebook page: ${linkExternal(http://www.facebook.com/wilsondub)}.
+	<br/>
+	Fri May  4 09:02:27 PDT 2012
+	<p>
+	There are clips from the Wilson DVD to be seen on teh youtube.
+	<object width="480" height="385"><param name="movie" value="http://www.youtube.com/v/Hic-yax9asQ?fs=1&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/Hic-yax9asQ?fs=1&amp;hl=en_US" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="480" height="385"></embed></object>
+	${upcomingGigs}
+	<br/>
+	${footer}
+
+#define	queryFeedback select distinct(f.uri), d.domain_id, d.server, count(f.uri) as cnt,
+	max(f.dtcreated) as newest from feedback f, domain d where f.domain_id = d.domain_id
+	group by d.server, 1 order by newest desc limit 50
+
+#define	feedback.html
+#live	if (getval(page) = feedback.html)
+	<title>
+	All feedback for hosted domains
+	</title>
+	<body bgcolor="#ffffff">
+	<h2>
+	All feedback for hosted domains
+	</h2>
+	${define(begFont, <font size="2" face="times">)}
+	${define(endFont, </font>)}
+#live	if (sql(feedback:${queryFeedback}))
+	${feedback->numResults} distinct rows
+	<table border="1" cellpadding="2" cellspacing="1" width="100%">
+#live	while (f = feedback[*]->cnt)
+	<tr>
+	<td>
+#live	if (getval(feedback[${f}]->uri) == htdb/)
+	<a href="http://${feedback[${f}]->server}/${feedback[${f}]->uri}">
+		${begFont}http://${feedback[${f}]->server}/${feedback[${f}]->uri}${endFont}</a>
+#live	else
+	<a href="http://${feedback[${f}]->server}/htdb/${feedback[${f}]->uri}">
+		${begFont}http://${feedback[${f}]->server}/htdb/${feedback[${f}]->uri}${endFont}</a>
+#live	endif
+	</td>
+	<td>
+	<a href="http://${feedback[${f}]->server}${linkFeedback}?${encrypt(resource=${feedback[${f}]->uri})}">
+		${begFont}has ${pluralize(${feedback[${f}]->cnt}, comment, comments)}${endFont}</a>
+	</td>
+	<td>
+	${begFont}last on ${parseDate(${feedback[${f}]->newest})}
+	${endFont}
+	</td>
+	<td>
+	${begFont}
+	${prettySecondsTerse(${eval(${_db_timestamp} - ${parseUnix(${feedback[${f}]->newest})})})} ago
+	</font>
+	${endFont}
+	</td>
+	</tr>
+#live	endwhile
+	</table>
+#live	endwhile
+#live	endif
+
+#define	db.html
+#live	if (getval(page) = db.html)
+#live	if (sql(dbstatus:show status))
+#live	endif
+	<table border=0 cellpadding=0 cellspacing=04
+#live	while (s = dbstatus[*]->Variable_name)
+	<tr>
+	<td>${dbstatus[${s}]->Variable_name}</td>
+	<td>${dbstatus[${s}]->Value}</td>
+	</tr>
+#live	endwhile
+	</table>
+#live	endif
+
+#define	decrypt.html
+    ${pe1(${cgi->query_string})}
+

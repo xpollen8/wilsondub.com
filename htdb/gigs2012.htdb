@@ -1,0 +1,28 @@
+#define	index.html
+	${mkWilsonHeader(section=Gigs)}
+
+	<b>August</b>
+	<dl>
+	${mkWilsonGigLink(year=2012, mon=Sep, day=7, venue=The Picturedome, address=Kettering Road, city=Northampton, country=England, extra=poster)}
+	</dl>
+
+#define	Sep7.html
+	${mkWilsonHeader(section=Gigs, title=2012)}
+
+	<a href="${images}/20120907/poster_20120907.jpg"><img
+		src="${images}/20120907/poster_20120907_250.jpg"
+		width=250 height=265 align="right" hspace="5" vspace="5"></a>
+	${g_venue} The Picturedome
+	${g_address} Kettering Road
+	${g_town} Northampton NN1 ${UK}
+	${g_date} ${mkWilsonGigDate()}
+	${notes_beg}
+	To celebrate, Wilson will be reforming for a special one-off show at The Picturedrome, Kettering Road, Northampton NN1 on Friday 7th September 2012.
+	<p>
+	Tickets for the event cost £2:50, exactly the same as at Wilson's very first show in March 2001. 
+	<p>
+	The DVD will be available to buy at the Picturedrome show.
+	<p>
+	Further availability details to follow.
+	${notes_end}
+	${footer}

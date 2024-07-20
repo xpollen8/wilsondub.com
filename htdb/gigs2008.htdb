@@ -1,0 +1,271 @@
+#define	index.html
+	${mkWilsonHeader(section=Gigs)}
+
+	<b>February</b>
+	<dl>
+	${mkWilsonGigLink(year=2008, mon=Feb, day=26, venue=The Soundhaus, adress=Great Russell Street, city=Northampton, country=England, extra=with-poster)}
+	</dl>
+	<b>March</b>
+	<dl>
+	${mkWilsonGigLink(year=2008, mon=Mar, day=22, venue=The Picturedrome, address=Kettering Road, city=Northampton, country=England, extra=poster, notes=free)}
+	</dl>
+	<b>April</b>
+	<dl>
+	${mkWilsonGigLink(year=2008, mon=Apr, day=10, venue=The 100 Club, address=Oxford Street, city=London W1, country=England, extra=with-poster)}
+	${mkWilsonGigLink(year=2008, mon=Apr, day=27, venue=The Racehorse, city=Northampton, country=England, extra=poster, notes=free)}
+	</dl>
+	<b>June</b>
+	<dl>
+	${mkWilsonGigLink(year=2008, mon=Jun, day=6, venue=The Labour Club, address=Earl & Charles, city=Northampton, country=England, notes=free, extra=poster)}
+	${mkWilsonGigLink(year=2008, mon=Jun, day=13, venue=Bibliotek, address=Castilian Street, city=Northampton, country=England, extra=with)}
+	</dl>
+	<b>July</b>
+	<dl>
+	${mkWilsonGigLink(year=2008, mon=Jul, day=26, venue=The Picturedrome, address=Kettering Road, city=Northampton, country=England, notes=free)}
+	</dl>
+	<b>August</b>
+	<dl>
+	${mkWilsonGigLink(year=2008, mon=Aug, day=9, venue=Charles Bradlaugh pub, address=Upper Mounts, city=Northampton, country=England, extra=with)}
+	${mkWilsonGigLink(year=2008, mon=Aug, day=31, venue=The Umbrella Fair, address=Abington Park, city=Northampton, country=England, notes=free)}
+	</dl>
+	<b>September</b>
+	<dl>
+	${mkWilsonGigLink(year=2008, mon=Sep, day=26, venue=The Racehorse, address=Abington Square, city=Northampton, country=England, extra=with-poster)}
+	</dl>
+	<b>October</b>
+	<dl>
+	${mkWilsonGigLink(year=2008, mon=Oct, day=24, venue=JAMM, address=261 Brixton Road, city=London SW9 6LH, country=England, extra=with)}
+	</dl>
+	<b>November</b>
+	<dl>
+	${mkWilsonGigLink(year=2008, mon=Nov, day=16, venue=The Labour Club, city=Northampton, country=England, extra-with)}
+	${mkWilsonGigLink(year=2008, mon=Nov, day=29, venue=The Roadmender, city=Northampton, country=England, extra=poster)}
+	</dl>
+	${footer}
+
+#define	Feb26.html
+	${mkWilsonHeader(section=Gigs, title=2008)}
+
+	<a href="${images}/20080226/poster_20080226.jpg"><img
+		src="${images}/20080226/poster_20080226_200.jpg"
+		width=200 height=141 align="right" hspace="5" vspace="5"></a>
+
+	${g_venue} The Soundhaus
+	${g_address} Great Russell Street
+	${g_town} Northampton ${UK}
+	${g_date} ${mkWilsonGigDate()}
+	${notes_beg}
+	Dragons + Wilson + The Pepper Box �6:00 - A Spiral Archive production.  
+	<p>
+	Dragons is the new band of Dave Francolini (Levitation/Dark Star)
+	${notes_end}
+	${footer}
+
+#define	Mar22.html
+	${mkWilsonHeader(section=Gigs, title=2008)}
+
+	<a href="${images}/20080322/20080322_poster.jpg"><img
+		src="${images}/20080322/20080322_poster_200.jpg"
+		width=200 height=315 align="right" hspace="5" vspace="5"></a>
+
+	${g_venue} The Picturedrome
+	${g_address} Kettering Road
+	${g_town} Northampton ${UK}
+	${g_date} ${mkWilsonGigDate()}
+	${notes_beg}
+	Free - A Velvet Engine production
+	${notes_end}
+	${footer}
+
+#define	Apr10.html
+	${mkWilsonHeader(section=Gigs, title=2008)}
+
+	<a href="${images}/20080410/poster_20080410.jpg"><img
+		src="${images}/20080410/poster_20080410_200.jpg"
+		width=200 height=243 align="right" hspace="5" vspace="5"></a>
+
+	${g_venue} The 100 Club
+	${g_address} Oxford Road
+	${g_town} London W1 ${UK}
+	${g_date} ${mkWilsonGigDate()}
+	${notes_beg}
+	Thursday 10th April<p>
+The 100 Club, Oxford Street, London W1<p>
+Opening for Jim Bob (ex Carter USM)<p>
+Tickets \@ 12.50 from ${linkExternal(http://www.wegottickets.com/event/23264)}<p>
+15:00 on the door on the night.
+	${notes_end}
+	${footer}
+
+#define	Apr27.html
+	${mkWilsonHeader(section=Gigs, title=2008)}
+
+	<a href="${images}/20080427/poster_20080427.jpg"><img
+		src="${images}/20080427/poster_20080427_200.jpg"
+		width=200 height=215 align="right" hspace="5" vspace="5"></a>
+
+	${g_venue} The Racehorse
+	${g_town} Northampton NN1 ${UK}
+	${g_date} ${mkWilsonGigDate()}
+	${notes_beg}
+	FREE
+	${notes_end}
+	${footer}
+
+#define	Jun6.html
+	${mkWilsonHeader(section=Gigs, title=2008)}
+
+	<a href="${images}/20080606/poster_20080606.jpg"><img
+		src="${images}/20080606/poster_20080606_200.jpg"
+		width=200 height=141 align="right" hspace="5" vspace="5"></a>
+
+	${g_venue} The Labour Club
+	${g_address} Earl & Charles
+	${g_town} Northampton NN1 ${UK}
+	${g_date} ${mkWilsonGigDate()}
+	${notes_beg}
+	Fri 6th June 2008<br>
+	Masters of Budvar<br>
+	The Labour Club, Earl & Charles, Northampton NN1<br>
+	Free<br>
+	We're presenting "an evening with Wilson" on our own turf at our own night with our favourite PA and a supertanker full
+	of Ceske Budejovice's finest.<br>
+	Full electric set - Wilson Son Et Lumiere - Wilson DJs - Acoustic support sets from various members of the band. Rumours  
+	that MC Bottman Bott will be performing balloon animal-related entertainments can neither be confirmed, nor yet plausibly 
+	denied.
+	${notes_end}
+	${footer}
+
+#define	Jun13.html
+	${mkWilsonHeader(section=Gigs, title=2008)}
+
+	${g_venue} Bibliotek
+	${g_address} Castilian Street
+	${g_town} Northampton NN1 ${UK}
+	${g_date} ${mkWilsonGigDate()}
+	${notes_beg}
+	Fri 13th June<br>
+	WILSON + Good Cop Bad Cop + support<br>
+	Bibliotek, Castilian Street, Northampton NN1<br>
+	3:00 admission
+	${notes_end}
+	${footer}
+
+#define	Jul26.html
+	${mkWilsonHeader(section=Gigs, title=2008)}
+
+	<a href="${images}/20080726/20080726_poster.jpg"><img
+		src="${images}/20080726/20080726_poster_200.jpg"
+		width=200 height=165 align="right" hspace="5" vspace="5"></a>
+
+	${g_venue} The Picturedrome
+	${g_address} Kettering Road
+	${g_town} Northampton NN1 ${UK}
+	${g_date} ${mkWilsonGigDate()}
+	${notes_beg}
+	Saturday 26th July 2008<br>
+	The Picturedrome, Kettering Road, Northampton NN1<br>
+	Free<br>
+	A return to the Picturedrome, where we had such a good time back in March. We'll be making maximum use of their
+	state-of-the-art lighting arrangements and doing our best to rock everybody in the kitchens of the Star of India, which
+	turn out to be right next door to the stage. We'll almost certainly do two sets here.
+	${notes_end}
+	${footer}
+
+#define	Aug9.html
+	${mkWilsonHeader(section=Gigs, title=2008)}
+
+	${g_venue} Charles Bradlaugh pub
+	${g_address} Upper Mounts
+	${g_town} Northampton NN1 ${UK}
+	${g_date} ${mkWilsonGigDate()}
+	${notes_beg}
+	Wilson play live at the All-Dayer at the Charles Bradlaugh pub, Upper Mounts, Northampton NN1 on Saturday 9th August 2008. Wilson will
+	be on at 7:00pm. As far as we know, admission is free. Lots of other cool bands and DJs.
+	${notes_end}
+	${footer}
+
+##define	Aug14.html
+#	${mkWilsonHeader(section=Gigs, title=2008)}
+#
+#	${g_venue} The 100 Club
+#	${g_address} 100 Oxford Street
+#	${g_town} London W1 ${UK}
+#	${g_date} ${mkWilsonGigDate()}
+#	${notes_beg}
+#	The 100 Club,<p>
+#	100 Oxford Street, London W1<p>
+#	Thursday 14th August 2008 at 7:00pm<p>
+#	Complete Control present The Woodentops, Wilson and Anchorsong. Tickets cost 12:50 from ${linkExternal(http://www.wegottickets.com/event/31009)}
+#	${notes_end}
+#	${footer}
+
+#define	Sep26.html
+	${mkWilsonHeader(section=Gigs, title=2008)}
+
+	<a href="${images}/20080926/poster_20080926.jpg"><img
+		src="${images}/20080926/poster_20080926_200.jpg"
+		width=200 height=276 align="right" hspace="5" vspace="5"></a>
+
+	${g_venue} The Racehorse
+	${g_address} Abington Square
+	${g_town} Northampton NN1 ${UK}
+	${g_date} ${mkWilsonGigDate()}
+	${notes_beg}
+	WILSON + Dirty Sweet<br>
+	The Racehorse, Abington Square, Northampton NN1<br>
+	Launch of Dirty Sweet's record label and club night.<br>
+	Admission tbc 
+	${notes_end}
+	${footer}
+
+#define	Aug31.html
+	${mkWilsonHeader(section=Gigs, title=2008)}
+
+	${g_venue} The Umbrella Fair
+	${g_address} Abington Park
+	${g_town} Northampton NN1 ${UK}
+	${g_date} ${mkWilsonGigDate()}
+	${notes_beg}
+	Sunday 31st August 2008<br>
+	The Umbrella Fair, Abington Park, Northampton NN1<br>
+	Free - Afternoon Event<br>
+	Last year's Umbrella Fair was a great success, the finest "green" festival that the town has seen in years. This year,
+	however, we shall be there to spoil it for everyone.
+	${notes_end}
+	${footer}
+
+#define	Oct24.html
+	${mkWilsonHeader(section=Gigs, title=2008)}
+
+	${g_venue} JAMM
+	${g_address} 261 Brixton Road
+	${g_town} London SW9 6LH ${UK}
+	${g_date} ${mkWilsonGigDate()}
+	${notes_beg}
+	Friday 24th October - JAMM, 261 Brixton Road, London SW9 6LH - Wilson supporting Alabama 3.
+	<p>
+	Tickets can be purchased for a very reasonable 8:00 from: 
+	<p>
+	The Dream Machine,<br>
+	89 Lordship Lane,<br>
+	East Dulwich,<br>
+	London SE22 8EP.<br>
+	Tel. 0208 699 6088.
+	${notes_end}
+	${footer}
+
+#define	Nov29.html
+	${mkWilsonHeader(section=Gigs, title=2008)}
+
+	<a href="${images}/20081129/poster_20081129.jpg"><img
+		src="${images}/20081129/poster_20081129_200.jpg"
+		width=200 height=148 align="right" hspace="5" vspace="5"></a>
+	${g_venue} The Roadmender
+	${g_town} Northampton ${UK}
+	${g_date} ${mkWilsonGigDate()}
+	${notes_beg}
+	Wilson have a gig at The Roadmender in Northampton NN1 on Saturday 29th November.
+	Tickets are 3:00 in advance from ${linkExternal(http://www.newroadmender.com)} or 5:00 on the door.
+	${notes_end}
+	${footer}

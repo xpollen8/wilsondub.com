@@ -1,0 +1,305 @@
+#define	index.html
+	${mkWilsonHeader(section=Gigs)}
+
+	<b>March</b>
+	<dl>
+	${mkWilsonGigLink(year=2001, mon=Mar, day=1, venue=The Soundhaus\, Great Russell Street, city=${NH}, country=England, extra=players-self-songlist-pat, notes=The ${wilson} debut!)}
+	</dl>
+	<b>April</b>
+	<dl>
+	${mkWilsonGigLink(year=2001, mon=Apr, day=1, venue=The Racehorse, city=${NH}, country=England, extra=players-pat)}
+	${mkWilsonGigLink(year=2001, mon=Apr, day=14, venue=The Packhorse, city=Leeds, country=England, extra=players-pat)}
+	</dl>
+	<b>May</b>
+	<dl>
+	${mkWilsonGigLink(year=2001, mon=May, day=24, venue=The Racehorse, city=${NH}, country=England, extra=players-self-songlist)}
+	</dl>
+	<b>October</b>
+	<dl>
+	${mkWilsonGigLink(year=2001, mon=Oct, day=7, venue=The Racehorse, city=${NH}, country=England, extra=tease-playersr, notes=free!)}
+	${mkWilsonGigLink(year=2001, mon=Oct, day=19, venue=Brudenell Social Club, city=Leeds, country=England, extra=teaser-players)}
+	</dl>
+	<b>December</b>
+	<dl>
+	${mkWilsonGigLink(year=2001, mon=Dec, day=2, venue=The Racehorse, city=${NH}, country=England, notes=free!, extra=players)}
+	${mkWilsonGigLink(year=2001, mon=Dec, day=24, venue=The Rockin' Horse, city=${NH}, country=England, extra=players)}
+	</dl>
+
+	${footer}
+
+#define	Mar1.html
+	${mkWilsonHeader(section=Gigs, title=2001)}
+
+	${g_venue} The Soundhaus, Great Russell Street
+	${g_town} ${NH}
+	${g_date} ${mkWilsonGigDate()}
+
+	${who_beg}
+	${w_pat}, ${w_russ}, ${w_kathie}
+	${who_end}
+	${g_tunes}
+	${critters} (out o tune mix)<br>
+	${gods_green_earth}<br>
+	${secret_government}<br>
+	${sweet_home_alabama} (the Warren Zevon song, that is)<br>
+	${burn_hollywood_burn}<br>
+	${dark_agenda}<br>
+	${critters} (we told you we could do it properly mix)
+	<p>
+
+	${notes_beg}
+	<p>
+	<b>WILSON</b> will be supporting Hane-Pesodi.<br>
+	<b>WILSON</b> are ${w_pat}, ${w_russ} and ${w_kathie}<br>
+	<b>WILSON</b> play 21st Century Dub.<br>
+	<b>WILSON</b> will be onstage at 9:15 pm and admission is two of your English Pounds.
+	${notes_end}
+	${pat_beg}
+	We experienced two of the most unexpected technical problems that I have ever
+	faced!
+	<p>
+	1. We came on stage, all neatly soundchecked, only to discover that the pad
+	on the CD backing track was a whole semitone out with all the guitars! Now,
+	I had just tuned the guitars (4 of 'em!), so I knew it wasn't that. What it
+	was was that the house CD player was one of those DJ jobs with varispeed.
+	Some prannet had obviously leaned on the varispeed button at some point,
+	thrusting ${wilson} into the Omniverse. A quick appeal from the stage brought
+	the house soundman hurtling across the dancefloor to "reset devices" and we
+	carried on happily.
+	<p>
+	2. Having broken a string on my telecaster, I was delighted to see it
+	reappear, fully strung-up, on my guitar stand. I picked it up for the start
+	of "Secret Government" only to discover that it was in regular EADGBE
+	tuning...which was odd, as it was supposed to be in an open D tuning. I had
+	to spend the first verse of the sing dragging the tuning back. Thank God for
+	silent tuners! Anyway, it all went smoothly enough and we carried on without
+	incident. It was only about 3 songs later that I became aware that it wasn't
+	my telecaster at all, but a look-alike kindly loaned by the other group!
+	Doh!
+	<p>
+	I tell ya - we thought we were SO well prepared!
+	<p>
+	Still, for all those little irritations the set went down well.
+	The audience was a fairly imposing bunch, about 100 strong, with pretty much
+	every pro musician in town, along with various representatives from the
+	Spacemen/Spiritualized axis, so it was quite a relief to hear people saying
+	nice things about us.
+	<p>
+	(It was even more fun to overhear bona-fide punters shouting "brilliant" at
+	each other at the bar.)
+	<p>
+	After the show we retired to Shakespeare Villas for a knees-up.
+	Imagine our surprise when the entire staff of the club, promoter, manager,
+	soundman and even a couple of barmaids showed up toting a crate of beer!
+	I think we might be "in there".
+	<p>
+	We all enjoyed ourselves (in a scary kinda way) and will definitely be doing
+	more shows wherever we can.
+	I think we're going to play The Packhorse in Leeds on 14th April, and we
+	could well be back at the Soundhaus on 19th April, but neither date is rock
+	solid yet.
+	<p>
+	Music? Wot's it like?
+	A sort of small and moody ${sumosonic}, but with more emphasis on dub and
+	general phatness (phatitude?)
+	<p>
+	We've started recording a demo with Ian the Sumo vocalist/producer.
+	${pat_end}
+
+	${footer}
+
+#define	Apr1.html
+	${mkWilsonHeader(section=Gigs, title=2001)}
+
+	${g_venue} The Racehorse
+	${g_town} ${NH}
+	${g_date} ${mkWilsonGigDate()}
+	${g_support} ${curt}
+	${who_beg}
+
+	${w_pat} - guitar<br>
+	${w_misery} - bass<br>
+	${w_russ} - percussion
+	${who_end}
+
+	${notes_beg}
+	${wilson} onstage about 10:00 pm
+	${notes_end}
+
+	${footer}
+
+#define	Apr14.html
+	${mkWilsonHeader(section=Gigs, title=2001)}
+
+	${g_venue} The Packhorse 9:30 pm
+	${g_town} Leeds${UK}
+	${g_date} ${mkWilsonGigDate()}
+	${g_support} ${curt}
+	${who_beg}
+	${w_pat} - guitar<br>
+	${w_misery} - bass<br>
+	${w_russ} - percussion
+	${who_end}
+
+	${notes_beg}
+	The plucky dub situationists will be playing at The Packhorse, Leeds,
+	UK on Saturday 14th April, opening for Saab 77.
+	${wilson} will be onstage at 9:30 pm.
+	<p>
+	Special navigational note: There are TWO Packhorses in Leeds!
+	This one is the one near the University.
+	${notes_end}
+
+	${footer}
+
+#define	May24.html
+	${mkWilsonHeader(section=Gigs, title=2001)}
+
+	${g_venue} The Racehorse 9:00 pm
+	${g_town} ${NH}
+	${g_date} ${mkWilsonGigDate()}
+	${g_support} Not By Choice
+
+	<p>
+	${g_tunes}
+	${critters}<br>
+	${gods_green_earth}<br>
+	${secret_government}<br>
+	${sweet_home_alabama}<br>
+	${burn_hollywood_burn}<br>
+	${dark_agenda}
+
+	${who_beg}
+	${w_pat} - Telecaster, Singer<br>
+	${w_misery} - Bass vibrations<br>
+	${w_russ} - Percussion<br>
+	${w_steve} - Stratocaster<br>
+	${w_bot} - MC<br>
+	${w_curt} - Theremin-like machine that goes Pffffffffttthhhhweeeeeeeoooop.
+	${who_end}
+
+	${pat_beg}
+	Well, against all the odds ${wilson} pulled off something of an away win last night.
+	Even if it was in our own home town.
+	<p>
+	After a week of frenzied - if accidental - recruiting, the Wilson line-up emerged onstage last night.
+	<p>
+	The Wilson auxiliaries, E-Man (Curtis E. Johnson), B-Man (Ian Botterill, of ${sumosonic} and Fat Controller) and
+	G-Man (Steve Gordon of NN1 Tarantino Funk kingpins P-Hex) all distinguished themselves very well indeed.
+	Only B-Man fell over. Conceivably he was doing this on purpose, but it rather depends on who you're talking to.
+	E-Man, being The Bald One, got to do Eno and G-Man added chunk funk and razzle in a fine demonstration of
+	What To Do With A Fender Twin.
+	<p>
+	We were supposed to be playing around 9:00 pm, but early in the evening it transpired that, in fact, we were to
+	headline a four band bill (it was easier on the drum kit situation, and all the other groups, being properly
+	youthful, probably found us faintly intimidating anyway). Accordingly, Wilson took the stage about ten minutes
+	before our ludicrous UK licensing laws closed the bar and about ten minutes mafter a steaming performance from the
+	young and very talented Capdown. Capdown (short for "Capitalist Downfall", I'm told) are a rocking skatepunk n ska
+	outfit who got the large and predominantly youthful crowd going something fierce. (You can catch them at this
+	year's Reading Festival - Capdown, not the large and predominantly youthful lot.)
+	<p>
+	Accordingly, we had a bit of a tough act to follow and very little time to get people over.
+	And we only went and pulled it off.
+	A lot of the younger punters began to mumble disconsolately at the sight of a bunch of grizzled pensioners
+	starting up, and some wandered out into the warm night and the beer garden. By half way through the set, though,
+	the mumblers were starting to dance and the gardeners began to return.
+	<p>
+	With B-Man on fine form, having just received a spectacular and well-deserved kicking from one of the town's
+	leading songwriters in the front bar, and with a powerful live sound from Geoff Kirk, our shit was truly swinging.
+	${burn_hollywood_burn} was duly incinerated
+	(the sound of 10,000 enraged LA Korean store owners marching on the Mondrian Hotel) before Wilson laid their Dark
+	Agenda upon the assembled and hideous guitar noise was the outcome.
+	Thence to an old school Sumo party at the Agent's yard and a beastly hangover this morning.
+	Nice one.
+	${pat_end}
+
+	${footer}
+
+#define	Oct7.html
+	${mkWilsonHeader(section=Gigs, title=2001)}
+
+	${g_venue} The Racehorse
+	${g_town} ${NH}
+	${g_date} ${mkWilsonGigDate()}
+
+	${who_beg}
+	${w_pat},
+	${w_misery},
+	${w_russ},
+	${w_steve},
+	${w_bot},
+	${w_curt}
+	${who_end}
+
+	${mkHeadstoneSez(txt=${literalizeCommas(
+		${wilson} appear to be holding steady at a 6 piece line-up and are adding
+		some new tunes for these dates.
+		One of them is a version of a Frank Zappa tune. Christ!
+	)})}
+
+	${footer}
+
+#define	Oct19.html
+	${mkWilsonHeader(section=Gigs, title=2001)}
+
+	${g_venue} Brudenell Social Club
+	${g_town} Leeds${UK}
+	${g_date} ${mkWilsonGigDate()}
+	${g_support} ${curt}, Saab 77, Mrs. Pilgrimm
+
+	${who_beg}
+	${w_pat},
+	${w_misery},
+	${w_russ},
+	${w_steve},
+	${w_bot},
+	${w_curt}
+	${who_end}
+
+	${mkHeadstoneSez(txt=${literalizeCommas(
+		${wilson} appear to be holding steady at a 6 piece line-up and are adding
+		some new tunes for these dates.
+		One of them is a version of a Frank Zappa tune. Christ!
+	)})}
+
+	${footer}
+
+#define	Dec2.html
+	${mkWilsonHeader(section=Gigs, title=2001)}
+
+	${g_venue} The Racehorse
+	${g_town} ${NH}
+	${g_date} ${mkWilsonGigDate()}
+
+	${who_beg}
+	${w_pat},
+	${w_misery},
+	${w_russ},
+	${w_steve},
+	${w_bot},
+	${w_curt}
+	${who_end}
+
+	${mkHeadstoneSez(txt=${literalizeCommas(
+		it is free!
+	)})}
+
+	${footer}
+
+#define	Dec24.html
+	${mkWilsonHeader(section=Gigs, title=2001)}
+
+	${g_venue} The Racehorse
+	${g_town} ${NH}
+	${g_date} ${mkWilsonGigDate()}
+
+	${who_beg}
+	${w_pat},
+	${w_misery},
+	${w_russ},
+	${w_steve},
+	${w_bot},
+	${w_curt}
+	${who_end}
+
+	${footer}

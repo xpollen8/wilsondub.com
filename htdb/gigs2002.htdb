@@ -1,0 +1,333 @@
+#define	index.html
+	${mkWilsonHeader(section=Gigs)}
+
+	<b>January</b>
+	<dl>
+	${mkWilsonGigLink(year=2002, mon=Jan, day=31, venue=The Boat Race, city=Cambridge, country=England, extra=pix-pat)}
+	</dl>
+	<b>March</b>
+	<dl>
+	${mkWilsonGigLink(year=2002, mon=Mar, day=29, venue=The Racehorse, city=Northampton, country=England, extra=teaser)}
+	${mkWilsonGigLink(year=2002, mon=Mar, day=30, venue=The Packhorse, city=Leeds LS1, country=England, extra=pix)}
+	</dl>
+	<b>April</b>
+	<dl>
+	${mkWilsonGigLink(year=2002, mon=Apr, day=28, venue=The Racehorse, city=Northampton, country=England)}
+	</dl>
+	<b>June</b>
+	<dl>
+	${mkWilsonGigLink(year=2002, mon=Jun, day=3, venue=The Racehorse, city=Northampton, country=England, extra=pat)}
+	</dl>
+	<b>August</b>
+	<dl>
+	${mkWilsonGigLink(year=2002, mon=Aug, day=25, venue=The Racehorse, city=Northampton, country=England, extra=self-songlist-poster)}
+	</dl>
+	<b>September</b>
+	<dl>
+	${mkWilsonGigLink(year=2002, mon=Sep, day=20, venue=The Roadmender, city=Northampton, country=England, extra=self-poster, notes=Headlining a 6 band bill - £3:00 - Open late)}
+	${mkWilsonGigLink(year=2002, mon=Sep, day=21, city=Builth Wells, country=Wales, extra=poster-pix-self-pat, notes=We didn't advertise it coz it was essentially a birthday party for an expat Northamptonian.)}
+	</dl>
+	<b>October</b>
+	<dl>
+	${mkWilsonGigLink(year=2002, mon=Oct, day=12, venue=The Roadmender, city=Northampton, country=England, extra=pat-poster-self, notes=Opening for Skindred)}
+	${mkWilsonGigLink(year=2002, mon=Oct, day=26, venue=Northamptonshire Cricket Club, city=Northampton, country=England, extra=pat, notes=Private party)}
+	</dl>
+	<b>December</b>
+	<dl>
+	${mkWilsonGigLink(year=2002, mon=Dec, day=8, venue=The Racehorse, city=Northampton, country=England, extra=poster, notes=free!)}
+	${mkWilsonGigLink(year=2002, mon=Dec, day=27, venue=The Racehorse, city=Northampton, country=England, notes=w/Eaglehead & P-Hex (anti-Nazi League benefit), extra=with)}
+	</dl>
+
+	${footer}
+
+#define	Jan31.html
+	${mkWilsonHeader(section=Gigs, title=2002)}
+
+	${g_venue} The Boat Race
+	${g_town} Cambridge ${UK}
+	${g_date} ${mkWilsonGigDate()}
+	${who_beg}
+	<a name="pix"></a>
+	<a href="${images}/2002Jan31/Boatrace.jpg"><img
+		src="${images}/2002Jan31/Boatrace_250.jpg" width=250 height=166 alt="big-ass image" border=1></a>
+	<p>
+	In January ${wilson} played with ${gab}'s band, Tobermory, in Cambridge.
+	${who_end}
+
+	${footer}
+
+#define	Mar29.html
+	${mkWilsonHeader(section=Gigs, title=2002)}
+
+	${g_venue} The Racehorse
+	${g_town} ${NH}
+	${g_date} ${mkWilsonGigDate()}
+	${g_support} Saab 77
+	${pat_beg}
+		Further excitement attends the Wilson show at The Racehorse.
+		We shall be having lights from Johnny P, who used to do Spacemen 3 among others,
+		and there will be DJ sets from ${w_andy}, whose rocksteady and dub disco has been
+		an essential part of NN1 life for several months.
+	${pat_end}
+
+	${footer}
+
+#define	Mar30.html
+	${mkWilsonHeader(section=Gigs, title=2002)}
+
+	${g_venue} The Packhorse
+	${g_town} Leeds LS1
+	${g_date} ${mkWilsonGigDate()}
+	${g_support} Saab 77
+
+	${who_beg}
+	<a name="pix"></a>
+	<a href="${images}/2002Mar30/2002Mar30.jpg"><img
+		src="${images}/2002Mar30/250_2002Mar30.jpg" width=250 height=158 alt="big-ass image" border=1></a>
+	${who_end}
+
+	${footer}
+
+#define	Apr28.html
+	${mkWilsonHeader(section=Gigs, title=2002)}
+
+	${g_venue} The Racehorse
+	${g_town} ${NH}
+	${g_date} ${mkWilsonGigDate()}
+
+	${footer}
+
+#define	Jun3.html
+	${mkWilsonHeader(section=Gigs, title=2002)}
+
+	${g_venue} The Racehorse
+	${g_town} Northampton, England
+	${g_date} ${mkWilsonGigDate()}
+
+	${who_beg}
+	Special Jubilee Mayhem
+	<p>
+	Wilson + full supporting cast in a punk rock special - The Racehorse, Northampton NN1 - Monday 3rd June 2002.
+	${who_end}
+
+	${footer}
+
+#define	Aug25.html
+	${mkWilsonHeader(section=Gigs, title=2002)}
+
+	<a href="${images}/2002Aug25/poster_2002Aug25.gif"><img
+		src="${images}/2002Aug25/poster_2002Aug25_small.gif"
+		width=200 height=257 align="right" hspace="5" vspace="5"></a>
+	${g_venue} The Racehorse
+	${g_town} ${NH}
+	${g_date} ${mkWilsonGigDate()}
+
+	${played_beg}
+	${quality_people}<br>
+	${burn_hollywood_burn} <br>
+	${istanbul_connection} <br>
+	${secret_government} <br>
+	${every_saturday_night} <br>
+	${hippy_shit} <br>
+	${sweet_home_alabama} <br>
+	${dark_agenda} <br>
+	${critters} <br>
+	${yellow_pages}<br>
+	${trouble_every_day} (yes, 2 new tunes)
+	${played_end}
+
+	${pat_beg}
+	Well, that was quite a night at the Racehorse, let me tell you.
+	<p>
+	The team: ${w_bot} (birthday boy, resplendent all in red and armed with a frankly risible bubble gun) - ${w_misery}
+	(Elegant and almost motionless in black)- ${w_russ} (A busy man) - Headstone (new heavy armaments in place, please keep
+	your heads down at the front) - ${w_steve} (mental as anything and fascinated by his own light show). ${w_curt} was
+	away in a foreign land on special familial business. Steve Ward did the sound and Johnny P the lights.
+	<p>
+	The Racehorse bar stages musical acts every Sunday. Some nights you barely notice they are there, even though there are
+	only about 15 drinkers in the bar. Some acts do pull in a small crowd of mates. And that's what we'd normally expect. All
+	right, we're older, so we know a few more mates. We put on some lights, try to do a decent sound, we get a few people in
+	and hopefully they enjoy it. We get paid, but we spend that on getting in a good pa and lights.
+	Last night when Johnny P and I came in from dinner, the place was fecking heaving.
+	<p>
+	MC Bot was enjoying his birthday, and to please him we put The Streets on the pa about 15 minutes before we went on, a move
+	of staggering arrogance and over-confidence, the sort of move that really filled me with karma terror. The sort of thing we
+	do all the fecking time, to be honest. Some kids waiting to see the group actually split when The Streets came on. At the
+	back of the room a small knot of middle-aged men were shouting along and making clenched-fist gestures in a display more
+	suited to men half their age, to whom such things are supposed still to matter.
+	<p>
+	As we took tthe stage I saw that Bot was toting some manner of ray gun. It turned out to fire bubbles. Stevie Ward brought
+	up my vocal mic just in time to catch me wailing "Sharon! Shaaaarrrroooooon!" But I mean, really. Here we are, the princes
+	and princess of the feckin' heart of darkness, and he's letting off fecking bubbles. What's evil about feckin' bubbles?
+	SHAAARROOOOOOON!!!!!!!!
+	Quality People kicked in like a bomb hitting the place, more or less. By the end the punters were cheering. Punters do not
+	cheer in the Racehorse bar of a Sunday night. It doesn't happen. But these punters were cheering. "Happy Birthday, Bot!"
+	cried Bot, instantly establishing the catch-phrase of the night. He had also, by now, fully mastered the technique of
+	wringing as much feedback from his radio mic as humanly possible. For the rest of the night, more on stage than among the
+	punters, it was like the fecking Mary Chain up there. WHOOOOOOOO- WHOOP- WHHHHEEEEEUUUUURRRRRRGGGGHHHHSSSSSSSZTSST...
+	<p>
+	The rest of the sound was pretty hard, though. Misery was positively subsonic. Russ got a rake of cavernous reverb on his
+	congas for Hippy Shit. We did the best "Trouble Every Day" since the Mothers stopped doing it. Bot was delivered of drinks
+	from the crowd throughout and only did a Dooj on my FX pedals once. Hey, it was his birthday. Once he has the paperwork
+	for. We got away with two brand new tunes. Good old crowd, good old night, way beyond our expectations. And those of Pete
+	the Landlord, I would imagine. He must have made a pile of money on the bar. Many of the people in his bar were Quite Drunk
+	at the end of the evening.
+	<p>
+	We headed back to Shakespeare Villas, currently more like Shakespeare International House Of Leaves, where a party
+	developed involving the band, plus members of Saab 77 and The Echo Chamber down from Leeds, P-Hex (Stevie G's enormous funk
+	band), The Sheep Thieves and Hinterhoff Records. Becks and Budvar were drunk, as was Scott the boy detective. We closed at
+	about 4:30 am. Not bad for a Sunday night at the local. Not bad at all.
+	<p>
+	Seriously, Dave, we rocked the joint.
+	<p>
+	Wilson Headstone technical update:
+	Now deploying a Hughes and Kettner Tour Reverb combo, a solid state job with a tube-in-a-box on the way in. Tube in a box.
+	Watch it glow in the dark. This also is the work of Mr. Hughes and Mister Kettner. The amp offers me three channels, and
+	the tube thingie effectively offers two more variations. With the Burns guitar that I picked up earlier this summer it
+	makes a mortal racket.
+	Also deploying a Boss phaser and an Ibanez delay. Mind your heads, boys and girls.
+	<p>
+	Botty: "We're called Wilson...because we make a racket."
+	<p>
+	Roadmender next, a nice big room where we shall have films as well as lights. The day after that we play a party in Wales.
+	In October, God help us, we're playing at somebody's wedding. But then it's time to go to London.
+	${pat_end}
+
+	${footer}
+
+#define	Sep20.html
+	${mkWilsonHeader(section=Gigs, title=2002)}
+
+	<a href="${images}/2002Sep20/poster_2002Sep20.jpg"><img
+		src="${images}/2002Sep20/poster_2002Sep20_small.jpg"
+		width=200 height=196 align="right" hspace="5" vspace="5"></a>
+	${g_venue} The Roadmender
+	${g_town} ${NH}
+	${g_date} ${mkWilsonGigDate()}
+
+	${pat_beg}
+	Headlining a 6 band bill - £3:00 - Open late
+	${pat_end}
+
+	${footer}
+
+#define	Sep21.html
+	${mkWilsonHeader(section=Gigs, title=2002)}
+
+	<a href="${images}/2002Sep21/poster_2002Sep21.jpg"><img
+		src="${images}/2002Sep21/poster_2002Sep21_small.jpg"
+		width=200 height=269 align="right" hspace="5" vspace="5"></a>
+	${g_venue} birthday party
+	${g_town} Builth Wells, Wales ${UK}
+	${g_date} ${mkWilsonGigDate()}
+
+	${pat_beg}
+	Well, the weekend was mental. As you know, we did the Roadmender on Friday night.
+	What you probably didn't know about was the Wilson Vietnam trip
+	to Wales yesterday. We didn't advertise it coz it was essentially a
+	birthday party for an expat Northamptonian. Plus nobody would tell us
+	the name of the farm where it was taking place! Still, we found the
+	fecker and rocked the shed fully. Full reports (featuring The Face O' Death) to follow.
+	<br clear=all>
+	<br>
+	<a name="pix"></a>
+	<table border=0 width="100%" cellspacing=10 cellpadding=0><tr>
+	<td valign="top" width="50%">
+	<a href="${images}/2002Sep21/GroupPic.jpg"><img
+		src="${images}/2002Sep21/thumb_GroupPic.jpg" width=250 height=159 border=1></a>
+	<br>
+	"Group Pic"
+	<br>
+	<font size="-1">
+	<b>Left to right:</b> Kathie McGinty; Nathan Harris; Pete Heyworth,
+	landlord of the Racehorse; Fiona from P-Hex; me, on the floor already; Ian
+	Anderson (P-Hex, Slipstream); Caroline and Steve Ward (who does the sound);
+	${w_steve} (Wilson, P-Hex, instigator of the whole enterprise);
+	${w_russ}, posing; Nita Allbright; Fred Ryan (back turned); Kath Schaer (aka Misery Wilson);
+	Jason Kells (Sheep Thieves)</font>
+	</td><td valign="top" width="50%">
+	<a href="${images}/2002Sep21/NoMates.jpg"><img
+		src="${images}/2002Sep21/thumb_NoMates.jpg" width=250 height=164 border=1></a>
+	<br>
+	"No Mates"
+	</td></tr><tr>
+	<td valign="top" width="50%">
+	<a href="${images}/2002Sep21/SteveFred.jpg"><img
+		src="${images}/2002Sep21/thumb_SteveFred.jpg" width=173 height=250 border=1></a>
+	<br>
+	"Steve and Fred"
+	</td><td valign="top" width="50%">
+	<a href="${images}/2002Sep21/CurtHeid.jpg"><img
+		src="${images}/2002Sep21/thumb_CurtHeid.jpg" width=95 height=250 border=1></a>
+	<br>
+	"${curt}'s painted head"
+	</td></tr></table>
+
+	${pat_end}
+
+	${footer}
+
+#define	Oct12.html
+	${mkWilsonHeader(section=Gigs, title=2002)}
+
+	<a href="${images}/2002Oct12/poster_2002Oct12.jpg"><img
+		src="${images}/2002Oct12/poster_2002Oct12_small.jpg"
+		width=200 height=295 align="right" hspace="5" vspace="5"></a>
+	${g_venue} The Roadmender
+	${g_town} ${NH}
+	${g_date} ${mkWilsonGigDate()}
+
+	${pat_beg}
+	As a result of the mmmm...severity of our <a href="${gigs}/2002/Sep20.html">Roadmender engagement</a>
+	we managed to pick up another date there.
+	We are opening for Skindred (uh-huh...) on Saturday 12th October.
+	So I guess we could let folks know about that one.
+	${pat_end}
+
+	${footer}
+
+#define	Oct26.html
+	${mkWilsonHeader(section=Gigs, title=2002)}
+
+	${g_venue} Northamptonshire Cricket Club
+	${g_town} ${NH}
+	${g_date} ${mkWilsonGigDate()}
+
+	${pat_beg}
+	We didn't advertise it, for it was a private party. The stage was
+	profoundly dark, which resulted in my playing like a blinking rhinoceros, but it didn't seem to
+	matter, as it all went down well anyway. We kicked, I was told afterwards, ass.
+	${pat_end}
+
+	${footer}
+
+#define	Dec8.html
+	${mkWilsonHeader(section=Gigs, title=2002)}
+
+	<a href="${images}/2002Dec8/poster_2002Dec8.jpg"><img
+		src="${images}/2002Dec8/poster_2002Dec8_small.jpg"
+		width=200 height=167 align="right" hspace="5" vspace="5"></a>
+	${g_venue} The Racehorse
+	${g_town} ${NH}
+	${g_date} ${mkWilsonGigDate()}
+
+	${notes_beg}
+	this is a free gig.
+	${notes_end}
+
+	${footer}
+
+
+#define	Dec27.html
+	${mkWilsonHeader(section=Gigs, title=2002)}
+
+	${g_venue} The Racehorse
+	${g_town} ${NH}
+	${g_date} ${mkWilsonGigDate()}
+	${who_beg}
+	${wilson} - w/Eaglehead & P-Hex.
+	This gig is a benefit for the
+	${linkExternal(http://www.lmhr.org.uk, Love Music, Hate Racism)} organisation.
+	${who_end}
+
+	${footer}

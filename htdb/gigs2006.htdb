@@ -1,0 +1,256 @@
+#define	index.html
+	${mkWilsonHeader(section=Gigs)}
+
+	<b>January</b>
+	<dl>
+	${mkWilsonGigLink(year=2006, mon=Jan, day=6, venue=The Labour Club, city=Northampton, country=England)}
+	</dl>
+	<b>May</b>
+	<dl>
+	${mkWilsonGigLink(year=2006, mon=May, day=7, venue=The Racehorse, address=Abington Square, city=Northampton, country=England, extra=poster, notes=Free)}
+	</dl>
+	<b>June</b>
+	<dl>
+	${mkWilsonGigLink(year=2006, mon=Jun, day=17, venue=The Exeter Hall, city=Oxford, country=England)}
+	</dl>
+	<b>July</b>
+	<dl>
+	${mkWilsonGigLink(year=2006, mon=Jul, day=10, venue=The Trauma Unit at Yates' Bar, city=Northampton, country=England)}
+	</dl>
+	<b>September</b>
+	<dl>
+	${mkWilsonGigLink(year=2006, mon=Sep, day=10, venue=The Racehorse, city=Northampton, country=England, extra=with-poster, notes=With The Woodentops)}
+	</dl>
+	<b>August</b>
+	<dl>
+	${mkWilsonGigLink(year=2006, mon=Aug, day=19, venue=The Racecourse, city=Northampton, country=England, notes=Balloon Fair)}
+	</dl>
+	<b>November</b>
+	<dl>
+	${mkWilsonGigLink(year=2006, mon=Nov, day=24, venue=The Zodiac, address=Cowley Road, city=Oxford, country=England, extra=with)}
+	</dl>
+	<b>December</b>
+	<dl>
+	${mkWilsonGigLink(year=2006, mon=Dec, day=20, venue=The Luminaire, address=Kilburn High Road, city=London, country=England, extra=with)}
+	${mkWilsonGigLink(year=2006, mon=Dec, day=31, venue=The Romany, city=Northampton, country=England, notes=A New Year's Eve extravaganza!)}
+	</dl>
+
+	${footer}
+
+#define	Jan6.html
+	${mkWilsonHeader(section=Gigs, title=2006)}
+
+	${g_venue} The Labour Club
+	${g_town} Northampton ${UK}
+	${g_date} ${mkWilsonGigDate()}
+	${notes_beg}
+<center>
+                                                       A Happy New Year from Masters of Budvar!
+
+                                                                           <p>
+
+                                                                FRIDAY 6th JANUARY 2006
+<p>
+                                                                           at
+<p>
+                                                              THE LABOUR CLUB, NORTHAMPTON
+
+                                                                           <p>
+
+                                                                         WILSON
+<p>
+                                                       Northampton's favourite digidub hooligans.
+<p>
+                                                                   www.wilsondub.com
+
+                                                                           <p>
+
+                                                                      THE NEW MOON
+<p>
+                                                        Powerful acoustic stylings from Oxford.
+
+                                                                           <p>
+
+                                                              SUPERSTAR DJ WILL CARRUTHERS
+<p>
+                                               The Spacemen 3/Spiritualised bassmeister spins the tunes.
+
+                                                                           <p>
+
+                                     Admission is free. Doors are open from 7:30pm. The bar is open until midnight.
+
+</center>
+	${notes_end}
+	${footer}
+
+#define	May7.html
+	${mkWilsonHeader(section=Gigs, title=2006)}
+
+
+    <a href="${images}/2006May7/poster_2006May7.jpg"><img
+	        src="${images}/2006May7/poster_2006May7_200.jpg"
+			        width=200 height=160 align="right" hspace="5" vspace="5"></a>
+
+	${g_venue} The Racehorse
+	${g_town} Abington Square, Northampton ${UK}
+	${g_date} ${mkWilsonGigDate()}
+	${notes_beg}
+	Sunday 7th May<br>
+	Wilson - Live Dub Goth Mayhem<br>
+	The Racehorse, Abington Square, Northampton<br>
+	9:00pm<br>
+	Front bar - Free admission<br>
+	${notes_end}
+	${footer}
+
+#define	Jun17.html
+	${mkWilsonHeader(section=Gigs, title=2006)}
+
+	${g_venue} The Exeter Hall
+	${g_town} Oxford ${UK}
+	${g_date} ${mkWilsonGigDate()}
+	${footer}
+
+
+#define	Jul10.html
+	${mkWilsonHeader(section=Gigs, title=2006)}
+
+	${g_venue} The Trauma Unit at Yates' Bar
+	${g_town} Northampton ${UK}
+	${g_date} ${mkWilsonGigDate()}
+	${footer}
+
+#define	Sep10.html
+	${mkWilsonHeader(section=Gigs, title=2006)}
+
+    <a href="${images}/2006Sep10/poster_2006Sep10.jpg"><img
+	        src="${images}/2006Sep10/poster_2006Sep10_200.jpg"
+			        width=200 height=361 align="right" hspace="5" vspace="5"></a>
+	${g_venue} The Racehouse
+	${g_address} 15 Abington Square
+	${g_town} Northampton ${UK}
+	${g_date} ${mkWilsonGigDate()}
+
+	${notes_beg}
+                                                             Planet Misery presents                                                              
+<p>
+                                                                       at                                                                        
+  <p>
+                                                                  THE RACEHORSE                                                                  
+    <p>
+                                                       15 Abington Square, Northampton NN1                                                       
+      <p>
+                                                                       on                                                                        
+        <p>
+                                                           SUNDAY 10th SEPTEMBER 2006                                                            
+<p>
+                                                                                                                                                 
+                                                                                                                                                 
+                                                                                                                                                 
+                                                                                                                                                 
+                                                                 THE WOODENTOPS                                                                  
+  <p>
+                                                                      plus                                                                       
+<p>
+                                                                     WILSON                                                                      
+<p>
+                                                                                                                                                 
+                                                                                                                                                 
+                            This will be the first live show from the legendary Rough Trade chart-toppers since 1992,                            
+<p>
+                                  a special warm-up for their gig at the 100 Club in London on Wednesday 13th.                                   
+<p>
+                                       Support comes from NN1's award-winning Gangster Goth combo, Wilson.                                       
+<p>
+                                                                                                                                                 
+                                                                                                                                                 
+                                             Doors open at 8:00pm in the back room of the Racehorse.                                             
+<p>
+                                                               Admission is 5:00
+<p>
+                                              Please get there early, as this event will sell out.    
+											  <p>
+Doors: 8:00pm                                                                                                                                         
+<p>
+Wilson onstage 9:15pm
+<br>
+Woodentops onstage: 10:15pm
+<br>
+Bar closes at midnight
+${notes_end}
+${footer}
+
+
+#define	Aug19.html
+	${mkWilsonHeader(section=Gigs, title=2006)}
+
+    <a href="${images}/2006Aug19/poster_2006Aug19.jpg"><img
+	        src="${images}/2006Aug19/poster_2006Aug19_200.jpg"
+			        width=200 height=284 align="right" hspace="5" vspace="5"></a>
+
+	${g_venue} The Racecourse, Northampton
+	${g_town} Northampton ${UK}
+	${g_date} ${mkWilsonGigDate()}
+
+	${notes_beg}
+	We're performing on Stage A, sponsored by the mighty ${linkExternal(http://www.phoenixsoundworks.com, Phoenix Sound Works)},
+	at seven o'clock in the evening.
+	It's free, of course. Everything we do is free. We wanna be free. To do what we wanna do. 
+	${notes_end}
+
+	${footer}
+
+
+#define	Nov24.html
+	${mkWilsonHeader(section=Gigs, title=2006)}
+
+	${g_venue} The Zodiac
+	${g_address} Cowley Road
+	${g_town} Oxford ${UK}
+	${g_date} ${mkWilsonGigDate()}
+
+	${notes_beg}
+	The Relationships + Wilson + another band<br>
+	Doors open: 7:00pm, admission �5:00  <br>
+	A Gappy Tooth Industries promotion
+	${notes_end}
+
+	${footer}
+
+
+#define	Dec20.html
+	${mkWilsonHeader(section=Gigs, title=2006)}
+
+	${g_venue} The Luminaire
+	${g_address} Kilburn High Road
+	${g_town} London ${UK}
+	${g_date} ${mkWilsonGigDate()}
+
+	${notes_beg}
+	The Luminaire, Kilburn High Road, London - 20th December 2006 - £5:00 
+	<p>
+	We are first on, opening for the Bikini Beach Band and The Surgens (sic) Expect Wilson on stage at 8:15pm
+
+	${notes_end}
+
+	${footer}
+
+
+
+#define	Dec31.html
+	${mkWilsonHeader(section=Gigs, title=2006)}
+
+	${g_venue} The Romany
+	${g_town} Northampton ${UK}
+	${g_date} ${mkWilsonGigDate()}
+
+	${notes_beg}
+	Wilson, The Sheep Thieves, Joe Woolley & The Prime Evils + Spiral Archive and other DJs - The Romany,                  
+	Northampton - 31st December 2006 - £15:00 
+	<p>
+	A New Year's Eve extravaganza! Doors open from 6:00pm to 3:00am. Wilson are the headline band. Expect us on stage at 9:30pm.
+
+	${notes_end}
+
+	${footer}
+

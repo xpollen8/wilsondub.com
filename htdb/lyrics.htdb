@@ -1,0 +1,659 @@
+#define	songs[1]->resource	buffalo_sniper
+#define	songs[1]->title		Buffalo Sniper
+#define	songs[1]->authors	Fish, Botterill, Johnson
+#define	songs[2]->resource	police_chief
+#define	songs[2]->title		Police Chief
+#define	songs[3]->resource	every_saturday_night
+#define	songs[3]->title		Every Saturday Night
+#define	songs[4]->resource	yellow_pages
+#define	songs[4]->title		Yellow Pages
+#define	songs[5]->resource	hippy_shit
+#define	songs[5]->title		Hippy Shit
+#define	songs[6]->resource	critters
+#define	songs[6]->title		Critters
+#define	songs[7]->resource	secret_government
+#define	songs[7]->title		Secret Government
+#define	songs[8]->resource	burn_hollywood_burn
+#define	songs[8]->title		Burn, Hollywood, Burn
+#define	songs[9]->resource	quality_people
+#define	songs[9]->title		Quality People
+#define	songs[10]->resource	istanbul_connection
+#define	songs[10]->title	Istanbul Connection
+#define	songs[11]->resource	dark_agenda
+#define	songs[11]->title	Dark Agenda
+#define	songs[12]->resource	trouble_every_day
+#define	songs[12]->title	Trouble Every Day
+#define	songs[13]->resource	play_it_all_night_long
+#define	songs[13]->title	Play It All Night Long
+#define	songs->field[1]		title
+#define	songs->field[2]		authors
+
+#define	buildList(l)
+#live	while (n = ${l}[*]->resource)
+#live	if (define(${${l}[${n}]->resource}, ${${l}[${n}]->resource}))
+#live	endif
+	#define	${${l}[${n}]->resource}
+		${${l}[${n}]->resource}
+		<br>
+#live	while (r = ${l}->field[*])
+#live	if	(defined(${l}[${n}]->${${l}->field[${r}]}))
+#live	if (define(${${l}[${n}]->resource}, ${${l}[${n}]->${${l}->field[${r}]}}))
+#live	endif
+	#define	${${l}[${n}]->resource}->${${l}->field[${r}]} ${${l}[${n}]->${${l}->field[${r}]}}
+<br>
+#live	endif
+#live	endwhile
+#live	endwhile
+
+#define	index.html
+	${mkWilsonHeader(section=Lyrics)}
+
+#${buildList(l=songs)}
+#	<hr>
+#	buffalo_sniper=${buffalo_sniper}<br>
+#	buffalo_sniper->title=${buffalo_sniper->title}<br>
+#	buffalo_sniper->authors=${buffalo_sniper->authors}<br>
+#	<hr>
+	<dl>
+	<dd>${no_winners}</dd>
+	<dd>${battle_time_now}</dd>
+	<dd>${buffalo_sniper}</dd>
+	<dd>${police_chief}</dd>
+	<dd>${every_saturday_night}</dd>
+	<dd>${yellow_pages}</dd>
+	<dd>${hippy_shit}</dd>
+	<dd>${critters}</dd>
+	<dd>${secret_government}</dd>
+	<dd>${burn_hollywood_burn}</dd>
+	<dd>${quality_people}</dd>
+	<dd>${istanbul_connection}</dd>
+	<dd>${dark_agenda}</dd>
+	<dd>${trouble_every_day}</dd>
+	<dd>${play_it_all_night_long}</dd>
+	</dl>
+
+	${footer}
+
+#define	buffalo_sniper.html
+	${mkWilsonHeader(section=Lyrics)}
+
+	<b>MBSDC02 (Buffalo Sniper)</b>
+	<blockquote>
+
+	Horrible murder<br>
+	In the heart of Amerikkka<br>
+	We got a buffalo sniper<br>
+	In the district of Columbia.<br>
+	Fear in the heart of every woman and man,<br>
+	Everybody looking for right white van.<br>
+	Cops run around coz they don't know squat.<br>
+	Dear Mister Policeman "This here is God."<br>
+	Guns kill people.<br>
+	People killing people.<br>
+	Guns kill people<br>
+	And the people got guns.<br>
+	Shotgun justice<br>
+	On the streets of Amerikkka.<br>
+	Vigilante hell<br>
+	In the District of Columbia.<br>
+	Revenge in the heart of every woman and man,<br>
+	One judge can't kill, but another one can.<br>
+	Lethal injection or electric chair:<br>
+	Have they got the right man? Does anybody care?<br>
+	Laws kill people.<br>
+	People killing people.<br>
+	Laws kill people<br>
+	And the people make laws.<br>
+	Hit him again, he's not quite done yet.
+	</blockquote>
+
+	Fish, Botterill, Johnson
+	Feb. 2003
+
+	${footer}
+
+#define	police_chief.html
+	${mkWilsonHeader(section=Lyrics)}
+
+	<b>Police Chief</b>
+	<blockquote>
+
+	He's a police chief.<br>
+	He is the chief of the police.<br>
+	He's a police chief.<br>
+	He's gonna give you some grief.<br>
+	He's a police chief.<br>
+	He is the chief of the police.<br>
+	He's a police chief.<br>
+	Better run get your brief.<br>
+	Marginal activities<br>
+	In criminal fraternities,<br>
+	Working for the Chief of Police.<br>
+	Disappearing evidence,<br>
+	Kiss goodbye to common sense,<br>
+	Working for the Chief of Police.<br>
+	He's a police chief.<br>
+	He is the chief of the police.<br>
+	In a police state,<br>
+	And he thinks that it<br>
+	He's great.<br>
+	He's a police chief.<br>
+	He is the chief of the police.<br>
+	In a police car.<br>
+	He's gonna drive to the bar.<br>
+	Marginal activities<br>
+	In criminal fraternities,<br>
+	Working for the Chief of Police.<br>
+	Disappearing evidence,<br>
+	Kiss goodbye to common sense,<br>
+	Working for the Chief of Police.<br>
+	He's a police chief.<br>
+	Gunshot on the heath.<br>
+	He's a police chief.                    X 2<br>
+	Better run get your brief.<br>
+	He's a police chief.<br>
+	He is the chief of the police.     X 2<br>
+	He's a police chief.<br>
+	Beyond belief!
+	</blockquote>
+
+	Fish, Botterill
+	Feb. 2003
+
+	${footer}
+
+#define	every_saturday_night.html
+	${mkWilsonHeader(section=Lyrics)}
+
+	<b>Every Saturday Night</b>
+	<blockquote>
+
+	Yvette is on the phone,<br>
+	She's calling for an ambulance<br>
+	You wouldn't leave it alone,<br>
+	But you ain't getting any second chances now.<br>
+	We're busted up inside.<br>
+	I'll never shit right again.<br>
+	You get the bag with the zip from head to toe<br>
+	And all because you had to have a go.<br>
+	Downtown, keep your head down.<br>
+	Don't be another have-a-go hero. Uptown, keep your head down.<br>
+	Don't be another have-a-go hero. <br>
+	What's it all about?<br>
+	I don't know so you better come tell me! <br>
+	What's it all about?<br>
+	What's it all about?<br>
+	What's it all about?<br>
+	What's it all about?<br>
+	You think you're a cop.<br>
+	I seen it on the CCTV.<br>
+	You didn't know when to stop.<br>
+	Now you're a victim and you'd best believe it.<br>
+	We're busted up inside.<br>
+	We're leaving here in a bag,<br>
+	The kind of bag that<br>
+	I'll sag with the weight of your bones.<br>
+	Forget the cab, there's a snag - you ain't going home.<br>
+	Downtown, keep your head down.<br>
+	Don't be another have-a-go hero.  <br>
+	Uptown, keep your head down.<br>
+	Don't be another have-a-go hero.<br>
+	What's it all about?<br>
+	I don't know so you better come tell me!<br>
+	What's it all about?<br>
+	What's it all about?<br>
+	What's it all about?<br>
+	What's it all about?<br>
+	It's about this.<br>
+	It's about that.<br>
+	It's about a minute till you get knocked flat.
+	</blockquote>
+
+	Botterill/Fish July 2002
+ 
+	${footer}
+
+#define	yellow_pages.html
+	${mkWilsonHeader(section=Lyrics)}
+
+	<b>Yellow Pages</b>
+	<blockquote>
+
+	<h1><font color="#ff0000">Censored for your protection</font></h1>
+	${shh(
+	Yellow pages. This moves in stages,<br>
+	Developing the works of the ancient sages.<br>
+	Clone me, coz my work is lonely.<br>
+	Keep it underground, keep away from Sony.<br>
+	Deeper undercover on a mission like a sleeper.<br>
+	Yeah, that's a railway sleeper.<br>
+	That's a fact, Jack, you can put it on the track<br>
+	Coz the moral of the story is the Beast is back<br>
+	From the Pyramids of Ancient Egypt.<br>
+	You can see it so you gotta believe it.<br>
+	Digging ever deeper in your mind, read the signs.<br>
+	Yeah, that's it<br>
+	right there<br>
+	right there!<br>
+	We're not lost <br>
+	It's a world of vibration.<br>
+	Wilson in your area  - Black Alsatian!<br>
+	Dark Agenda, do you need an explanation?<br>
+	Catch the train of thought before it pulls out of the station.<br>
+	<br>
+	Where do you want to go today?<br>
+	Bad cells <br>
+	It's a scientist's dream,<br>
+	Moving in the bloodstream, clog you like ice cream - fact!<br>
+	This thing is not an act.<br>
+	We do the science and the software's cracked exact.<br>
+	Another word from the ancient sages:<br>
+	You don't keep a tiger in a ten foot cage. It's wrong.<br>
+	Muthafucka run along.<br>
+	Wilson in the area - load up the Big Bong.<br>
+	Where do you want to go today?
+	)}
+	</blockquote>
+
+	Botterill/Fish - July 2002
+
+	${footer}
+
+#define	hippy_shit.html
+	${mkWilsonHeader(section=Lyrics)}
+
+	<b>Hippy Shit</b>
+	<blockquote>
+
+	Does anybody here really understand<br>
+	What goes on in the heart of a man?<br>
+	Sometimes it's hard to understand<br>
+	What goes on in the heart of a man.<br>
+	<br>
+	Fuck off with your hippy shit.<br>
+	<br>
+	Now, this life can be so full of care,<br>
+	Oftentimes feels like you ain't going nowhere.<br>
+	Why don't you do what the weed smokers do?<br>
+	<br>
+	Fuck off with your hippy shit.<br>
+	<br>
+	Does anybody here really understand<br>
+	What goes on in the heart of a man?<br>
+	Coz this life can be so full of care<br>
+	Oftentimes fels like you ain't going nowhere.<br>
+	Why don't you do what the weed smokers do?<br>
+	Get yourself a little of what's good for you.<br>
+	<br>
+	The sun is high, and so am I<br>
+	When you're a viper.<br>
+	<br>
+	Fuck off with your hippy shit.
+	</blockquote>
+
+	&copy; The entire population of the world, with a chorus by Bot.
+
+	${footer}
+
+#define	critters.html
+	${mkWilsonHeader(section=Lyrics)}
+
+	<b>Critters</b>
+	<blockquote>
+
+	Excellent! Beyond belief!<br>
+	The sky above, the Earth beneath.<br>
+	The bird that sees the fish that swims<br>
+	And all the little creeping things<br>
+	That may be there below the ground-<br>
+	You never hear them make a sound.<br>
+	The ones that could be in the air:<br>
+	You can't be sure they're even there.<br>
+	<br>
+	Critters!<br>
+	<br>
+	World War Three across the Atlantic.<br>
+	Guns and bombs to sare the Icelandic.<br>
+	Submarine appear in a wolfpack.<br>
+	No way for the convoy to turn back.<br>
+	Flotation, echo location, depth charge, action stations.<br>
+	Flotation, undersea nation, out of the water comes deep devastation.<br>
+	Loch Ness Monster strikes from the depths of the sea.<br>
+	I come to destroy.
+	</blockquote>
+
+	&copy; Fish, Botterill, King Horror
+
+	${footer}
+
+#define	secret_government.html
+	${mkWilsonHeader(section=Lyrics)}
+
+	<b>Secret Government</b>
+	<blockquote>
+
+	Secret Government. Secret Government.<br>
+	Secret Government underground.<br>
+	Them take the biscuit. Them take the cake.<br>
+	Secret Government underground.<br>
+	<br>
+	Secret Government. Secret Government.<br>
+	Secret Government fight the Secret Wars.<br>
+	Them take the public. Them take the bus.<br>
+	Underground.<br>
+	<br>
+	There's a war going on. There'a a war going on.<br>
+	There's a war going on under the ground.<br>
+	<br>
+	Secret Government. Secret Government.<br>
+	Secret Government underground.<br>
+	Them take the biscuit. Them take the cake.<br>
+	<br>
+	Secret Government underground.
+	</blockquote>
+
+	&copy; Fish
+
+	${footer}
+
+#define	burn_hollywood_burn.html
+	${mkWilsonHeader(section=Lyrics)}
+
+	<b>Burn Hollywood Burn</b>
+	<blockquote>
+
+	Woke up this morning I was under someone else's wheels.<br>
+	So now I know how the poor mug in the front line feels.<br>
+	California sleeping in the midday sun,<br>
+	All unaware of what's already begun.<br>
+	California sleeping in the midday sun,<br>
+	No idea of what's about to become.<br>
+	<br>
+	We're coming round to burn shit down<br>
+	From las haciendas de la playa to your town.<br>
+	We're coming round to burn shit down<br>
+	From las noches de los Oscars to the Jewel in the Crown.<br>
+	<br>
+	Woke up this morning I was under someone else's wheels.<br>
+	So now I know how the Secret Government feels.<br>
+	<br>
+	We're coming round to burn shit down<br>
+	From las haciendas de la playa to your town.<br>
+	We're coming round to burn shit down<br>
+	From las noches de los Oscars to the Jewel in the Crown.<br>
+	<br>
+	We're coming round to burn shit down<br>
+	From las playas de Majorca to Northampton Town NN1.<br>
+	We're coming round to burn shit down<br>
+	Coz we don't care for the big hair sounds in Poodletown.<br>
+	<br>
+	Poodletown!<br>
+	<br>
+	Burn, Hollywood, burn, Hollywood, burn, Hollywood, burn.<br>
+	Burn, Hollywood, burn, Hollywood, burn, muthafucka, burn.
+	</blockquote>
+
+	&copy; Fish/Botterill
+
+	${footer}
+
+#define	quality_people.html
+	${mkWilsonHeader(section=Lyrics)}
+
+	<b>Quality People</b>
+	<blockquote>
+
+	I took an aeroplane to Switzerland.<br>
+	They lost my luggage so i had to stand<br>
+	In a very long line at a re-inforced window<br>
+	To fill in a form to say what had gone wrong.<br>
+	It really is lovely in Switzerland Airport,<br>
+	As clean as a glass in a very smart restaurant.<br>
+	This is the work of some quality people.<br>
+	This ain't an airport, it's a fucking cathedral!<br>
+	Come on!<br>
+	<br>
+	Take me to the quality people.<br>
+	Shake me at the quality people.<br>
+	I relate to quality people.<br>
+	I vibrate with quality people.<br>
+	<br>
+	Quality people with quality penknives,<br>
+	Quality chocolate and quality cheese.<br>
+	Quality people with quality sex lives.<br>
+	Quality headgear for geezers on skis.<br>
+	<br>
+	Come on!<br>
+	<br>
+	Take me to the quality people.<br>
+	Shake me at the quality people.<br>
+	I relate to quality people.<br>
+	I vibrate with quality.<br>
+	<br>
+	Quality people with quality penknives.<br>
+	Quality people with love in their lives.<br>
+	Quality people with quality penknives.<br>
+	Quality people with nothing to hide.
+	</blockquote>
+
+	&copy; Botterill, Fish, Soybaz
+
+	${footer}
+
+#define	istanbul_connection.html
+	${mkWilsonHeader(section=Lyrics)}
+
+	<b>Istanbul Connection</b>
+	<h1><font color="#ff0000">Censored for your protection</font></h1>
+	${shh(
+	<blockquote>
+
+	Light your pipe, smoke your pipe.<br>
+	The Almighty will give you peace.<br>
+	Smoke and drink small sips of tea.<br>
+	The Almighty will set you free from your tribulation.<br>
+	<br>
+	Istanbul!<br>
+	Istanbul!<br>
+	Istanbul Connection!<br>
+	<br>
+	Istanbul, not Constantinople.<br>
+	Istanbul.<br>
+	<br>
+	Are these the words of the almighty cartels and corporations of the earth?<br>
+	<br>
+	Heresy from an ancient century.<br>
+	Saint John! The Chrisitians try to stop him but he just come on.<br>
+	This is a mystery of a deep complexity.<br>
+	Saint John The Baptist! Jesus try to stop him but he just get captured.<br>
+	<br>
+	Out in the desert with a mystery head.<br>
+	Out in the desert with a loaf of bread.<br>
+	Out in the desert with a nameless dread.<br>
+	If you want to get ahead in the desert get ahead.<br>
+	<br>
+	The curse of the animals is on the cannibals,<br>
+	The curse that can be cured by no doctor, no scientist and no psychiatrist<br>
+	Says Fire Jehovah Jah Rastafari on the wire.<br>
+	<br>
+	Istanbul.<br>
+	Istanbul.<br>
+	Istanbul - correction!<br>
+	<br>
+	Heresy from the very first century.<br>
+	Saint John! Jesus try to stop him but he still turns on.<br>
+	<br>
+	Out in the desert with a mystery head.<br>
+	Out in the desert with a loaf of bread.<br>
+	Out in the desert with a nameless dread.<br>
+	If you want to get ahead in the desert get ahead.
+	</blockquote>
+	)}
+
+	&copy; Fish, Johnson, Botterill, Traditional, Burroughs, Perry
+
+	${footer}
+
+#define	Taliban	${reverse(Taliban)}
+
+#define	dark_agenda.html
+	${mkWilsonHeader(section=Lyrics)}
+
+	<b>Dark Agenda</b>
+	<h1><font color="#ff0000">Censored for your protection</font></h1>
+	${shh(
+	<blockquote>
+	Eat! Sleep! Drink! Rock!<br>
+	Eat! Sleep...Don't Sleep! Rock!<br>
+	<br>
+	Dark agenda, nameless dread:<br>
+	We like to get inside and fuck with your head.<br>
+	Dark agenda, nameless dread:<br>
+	I know you think about it while you're lying in bed.<br>
+	<br>
+	Coz life is simple, life is sweet,<br>
+	Just take care where you are putting your feet.<br>
+	Life is simple, life is cheap,<br>
+	Taking a ride in the ${Taliban} Jeep.<br>
+	<br>
+	Coz life is simple, life is sweet,<br>
+	Just take care where you are putting your feet.<br>
+	Life is simple, life is cheap,<br>
+	Taking a ride in the ${Taliban} Jeep.<br>
+	<br>
+	${Taliban} Jeep. ${Taliban} Jeep.<br>
+	New York City in the ${Taliban} Jeep.<br>
+	${Taliban} Jeep. ${Taliban} Jeep.<br>
+	Drive down Broadway in the ${Taliban} Jeep.<br>
+	<br>
+	${Taliban} Jeep. ${Taliban} Jeep.<br>
+	New York City in the ${Taliban} Jeep.<br>
+	${Taliban} Jeep. ${Taliban} Jeep.<br>
+	Don't go to sleep in the ${Taliban} Jeep.<br>
+	<br>
+	For all the freedom fighters of the World.<br>
+	Che Guevara! <br>
+	Leon Trotsky! <br>
+	Fidel Castro! <br>
+	Sam and Dave!
+	)}
+	</blockquote>
+
+	&copy; Fish/Botterill 2001
+
+	${shh(
+	<p>
+
+	<b>Concerning the ridiculous need for self-censorship..</b> (fat tips to Mr Poindexter and Ashcroft!)
+	<blockquote>
+	You see what I mean. Ah well. You and I know that the ${Taliban} Jeep/New York
+	stuff is about that time that the JBC got a taxi back from the Spin offices
+	down Broadway to our secret Downtown Headquarters. The young taxi driver
+	with the huge beard and the black turban kept plying us with questions about
+	every aspect of Western celebrity stupidity from Michael Jackson to Lady Diana.
+	<p>
+	He couldn't say "musician" - he kept calling us "magicians". Later that
+	day, I overheard Owen saying to somebody - "Oh yeah, we had a taxi ride
+	with the ${Taliban} this afternoon." Well, a couple of months later, when Bot
+	and I saw the documentary on the BBC where the trendy young British twat
+	"penetrated" ${Taliban}-run Afghanistan with his secret camera, and we heard
+	him saying repeatedly (and endearingly nervously) "${Taliban} Jeep", we thought
+	of that New York experience and we thought of our backing track and so on...
+	<p>
+	It was March 2001...
+	<p>
+	The Stone
+	</blockquote>
+	)}
+
+	${footer}
+
+#define	no_winners.html
+	${mkWilsonHeader(section=Lyrics)}
+
+	<b>No Winners</b>
+	<blockquote>
+	God is in the details, I've heard that's what they say.<br>
+	Well, God is in the bathroom - I saw him there today.<br>
+	You got Jesus in the bathroom, the Pope lies in the vault,<br>
+	Ghandi's on the A-Train, Satan's in the mall.<br>
+	The Devil's in the details, in the paperwork and files:<br>
+	A tidal wave of information spreading out for miles.<br>
+	Megatons of garbage, as far as you can see:<br>
+	It's mean, it's wrong, it's meaningless. It means you're never free.
+	<p>
+	No winners in Zimbabwe, no winners in Hong Kong,<br>
+	No winners in your Commonwealth, no winners in this song.<br>
+	No winners at the bunfight, no winners at the trough,<br>
+	No winners at Ground Zero, no winners, buster - set it off.
+	<p>
+	Sixty years since Auschwitz: Guantanamo Bay,<br>
+	The Countryside Alliance and the Real IRA.<br>
+	Turn off the telly but they never go away.<br>
+	I'm like Jimmy Carl Black, I got trouble every day.<br>
+	I feel like beef tonight. Who wants to have a fight?<br>
+	I feel like beef tonight. Who wants some?
+	<p>
+	I'm so excited and I just can't hide it.<br>
+	I'm about to lose control and I think I like it.
+	<p>
+	No winners in the Lebanon, no winners in Madrid,<br>
+	No winners at the P2 Lodge for all they gone done did.<br>
+	No winners in Afghanistan, no winners in Tibet,<br>
+	No winners in this human race, no winners in just yet.
+	</blockquote>
+
+	&copy; Fish/Botterill April 2005
+
+	${pat_beg}
+	Cheerful, huh? I introduced No Winners to the band as being a treatise on the ultimate futility oif religious-based conflict. You
+	should have seen their little faces! Bot and I don't quite know what the other one's about...exactly...but it's jungle, so we
+	like it.
+	${pat_end}
+
+	${footer}
+
+#define	battle_time_now.html
+	${mkWilsonHeader(section=Lyrics)}
+
+	<b>Battle Time Now</b>
+	<blockquote>
+	Fear the madness generator.
+	<p>
+	In the morning with the rising sun<br>
+	Man's got to run 'cause there's work to be done.<br>
+	In the daytime at your nine-to-five,<br>
+	Punching in your numbers in an effort to survive.<br>
+	In the evening, when it's coming on strong<br>
+	Down another and it won't be long.<br>
+	In the dead of night it's a familiar sight:<br>
+	Face-down in a river of shite.
+	<p>
+	Through the madness Through the madness<br>
+	Through the madness<br>
+	Like a midget submarine.<br>
+	Through the madness Through the madness<br>
+	Through the madness<br>
+	If you know what I mean.
+	<p>
+	Now is the time of a great big mother of a battle in the time of the end time.<br>
+	Now is the time of a great big mother of a battle in the time of the end time.<br>
+	Now is the time of a great big mother of a battle in the time of the end time.<br>
+	Now is the time of a great big mother of a battle<br>
+	in the time of the end time.
+	<p>
+	Through the madness<br>
+	Through the madness<br>
+	Through the madness<br>
+	Like a midget submarine.<br>
+	Through the madness Through the madness<br>
+	Through the madness<br>
+	If you know what I mean.
+	<p>
+	Fear the madness generator.
+
+	</blockquote>
+
+	&copy; Fish/Botterill April 2005
+
+	${footer}

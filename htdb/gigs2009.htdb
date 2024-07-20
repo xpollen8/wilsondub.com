@@ -1,0 +1,25 @@
+#define	index.html
+	${mkWilsonHeader(section=Gigs)}
+
+	<b>August</b>
+	<dl>
+	${mkWilsonGigLink(year=2009, mon=Aug, day=15, venue=The Picturedome, address=Kettering Road, city=Northampton, country=England, extra=poster)}
+	</dl>
+
+#define	Aug15.html
+	${mkWilsonHeader(section=Gigs, title=2009)}
+
+	<a href="${images}/20090815/poster_20090815.jpg"><img
+		src="${images}/20090815/poster_20090815_250.jpg"
+		width=250 height=360 align="right" hspace="5" vspace="5"></a>
+	${g_venue} The Picturedome
+	${g_address} Kettering Road
+	${g_town} Northampton NN1 ${UK}
+	${g_date} ${mkWilsonGigDate()}
+	${notes_beg}
+	WILSON will be appearing at the Picturedrome, Kettering Road, Northampton NN1 on Saturday 15th August.                                
+	<p>
+	Admission will be free, because we shall be making a film of the night. Expect Johnny P. and his lightshow, guest DJs and complete and    
+	utter mayhem.
+	${notes_end}
+	${footer}

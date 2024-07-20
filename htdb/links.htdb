@@ -1,0 +1,84 @@
+#define	index.html
+	${mkWilsonHeader(section=Links)}
+
+	<blockquote>
+
+	<b>${linkExternal(http://www.northamptonbands.co.uk, Northampton Bands)}</b>
+	<blockquote>
+	This is very much the place now to find out what's going on on the NN1 scene.
+	We have a presence there, whereby the surfer can get to our site.
+	There is also a hilarious list of all the bands who have signed up.
+	Most of them we have never even heard of, and they probably split up
+	ages ago after doing one gig in a village...
+	${linkExternal(http://www.northamptonbands.co.uk)}
+	</blockquote>
+
+	<b>${linkExternal(http://www.racehorse.moonfruit.com, The Racehorse)}</b>
+	<blockquote>
+	${linkExternal(http://www.racehorse.moonfruit.com)}
+	</blockquote>
+
+	<b>${linkExternal(http://notinmyname.net, Not In My Name)}</b>
+	<blockquote>
+	${linkExternal(http://notinmyname.net)}
+	</blockquote>
+
+	<b>${linkExternal(http://jazzbutcher.com, The Jazz Butcher Conspiracy)}</b>
+	<blockquote>
+	${linkExternal(http://jazzbutcher.com)}
+	</blockquote>
+
+	<b>${linkExternal(http://sumosonic.com, Sumosonic)}</b>
+	<blockquote>
+	${linkExternal(http://sumosonic.com)}
+	</blockquote>
+
+	<b>${linkExternal(http://www.lmhr.org.uk, Love Music, Hate Racism)}</b>
+	<blockquote>
+	${linkExternal(http://www.lmhr.org.uk)}
+	</blockquote>
+
+	<b>${linkExternal(http://www.skanksoundsystem.co.uk, Skank Sound System)}</b>
+	<blockquote>
+	"'Get up and get skanking to the original monster sound'
+	<br>
+	Listen to the stomping tunes that inspired: The Specials, Selecter etc. Original Jamaican ska, dub
+	rocksteady and reggae; from the likes of Desmond Dekker, Prince Buster, Bob Marley and Lee Scratch
+	Perry. Big up, hold tight, large it!"
+	<br>
+	${linkExternal(http://www.skanksoundsystem.co.uk)}
+	</blockquote>
+
+	<b>${linkExternal(http://www.phoenixsoundworks.com, Phoenix Sound Works)}</b>
+	<blockquote>
+	"guitar & bass, PA amplifiers & speakers, backline, home recording,
+	            microphones, accessories & more"
+	<br>
+	${linkExternal(http://www.phoenixsoundworks.com)}
+	</blockquote>
+
+	<b>${linkExternal(http://www.kerosenebomb.com, Kerosene Bomb)}</b>
+	<blockquote>
+	They are our kind of people having fun
+	<br>
+	${linkExternal(http://www.kerosenebomb.com)}
+	</blockquote>
+
+	<b>${linkExternal(http://www.ochre.co.uk, Ochre Records)}</b>
+	<blockquote>
+	Applecraft's record company, Ochre Records.
+	<br>
+	${linkExternal(http://www.ochre.co.uk)}
+	</blockquote>
+
+	<b>${linkExternal(http://www.slipstreamweb.co.uk, Slipstream)}</b>
+	<blockquote>
+	Slipstream have a website going. It is possibly the only place in the world where you can find Wilson
+	listed next door to the Pet Shop Boys.
+	<p>
+	${linkExternal(http://slipstreamweb.co.uk)}
+	</blockquote>
+
+	</blockquote>
+
+	${footer}

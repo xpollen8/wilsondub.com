@@ -1,0 +1,21 @@
+#include	macros
+
+#define	index.html
+	${mkWilsonHeader(section=News)}
+#live	loop(i, ${maxNews}, 1, -1))
+#live	if (date(F, ${news[${i}]->date}) != ${date(F, ${news[${eval(${i} + 1)}]->date})})
+	<hr noshade size=1>
+	<b>
+	<div align="center">
+	${date(F\, Y, ${news[${i}]->date})}
+	</div>
+	</b>
+	<hr noshade size=1>
+#live	endif
+	<font size=1>(posted ${date(l\, F jS\, Y, ${news[${i}]->date})})</font>
+	<blockquote>
+	${news[${i}]->item}
+	</blockquote>
+	<br clear=all>
+#live	endloop
+	${footer}

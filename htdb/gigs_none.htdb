@@ -1,0 +1,5 @@
+#define	index.html
+	${mkWilsonHeader(section=Gigs)}
+
+	no gigs this year!
+	${footer}

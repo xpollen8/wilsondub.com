@@ -1,0 +1,206 @@
+#define	index.html
+	${mkWilsonHeader(section=Gigs)}
+
+	<b>Past Gigs</b>
+	<blockquote>
+	<a href="${gigs}/2001">2001</a>,
+	<a href="${gigs}/2002">2002</a>,
+	<a href="${gigs}/2003">2003</a>,
+	<a href="${gigs}/2004">2004</a>,
+	<a href="${gigs}/2005">2005</a>,
+	<a href="${gigs}/2006">2006</a>,
+	<a href="${gigs}/2007">2007</a>
+	</blockquote>
+
+	${upcomingGigs}
+
+	${footer}
+
+#define	fliers.html
+
+	${mkWilsonHeader(section=Gig Fliers)}
+
+	<center>
+
+		<table border=0 cellpadding=3 cellspacing=3>
+		<tr>
+		<td valign=top>
+		<a href="${gigs}/2002/Sep20.html"><img
+			src="${images}/2002Sep20/poster_2002Sep20_small.jpg" width=200 height=196></a>
+		<br>
+		<b>2002Sep20</b>
+		</td><td valign=top>
+		<a href="${gigs}/2002/Sep21.html"><img
+			src="${images}/2002Sep21/poster_2002Sep21_small.jpg" width=200 height=269></a>
+		<br>
+		<b>2002Sep21</b>
+		</td>
+		<td valign=top>
+		<a href="${gigs}/2002/Aug25.html"><img
+			src="${images}/2002Aug25/poster_2002Aug25_small.gif" width=200 height=257></a>
+		<br>
+		<b>2002Aug25</b>
+		</td></tr><tr><td valign=top>
+		<a href="${gigs}/2002/Oct12.html"><img
+			src="${images}/2002Oct12/poster_2002Oct12_small.jpg" width=200 height=295></a>
+		<br>
+		<b>2002Oct12</b>
+		</td><td valign=top>
+		<a href="${gigs}/2002/Dec8.html"><img
+			src="${images}/2002Dec8/poster_2002Dec8_small.jpg" width=200 height=167></a>
+		<br>
+		<b>2002Dec8</b>
+		</td><td valign=top>
+		<a href="${gigs}/2003/Mar29.html"><img
+			src="${images}/2003Mar29/poster_2003Mar29_small.jpg" width=200 height=150></a>
+		<br>
+		<b>2003Mar29</b>
+		</td></tr>
+		<tr><td valign=top>
+		<a href="${gigs}/2003/Apr19.html"><img
+			src="${images}/2003Apr19/poster_2003Apr19_small.gif" width=200 height=136></a>
+		<br>
+		<b>2003Apr19</b>
+		</td><td valign=top>
+		<a href="${gigs}/2003/May4.html"><img
+			src="${images}/2003May4/poster_2003May4_small.jpg" width=200 height=136></a>
+		<br>
+		<b>2003May4</b>
+		</td><td valign=top>
+		<a href="${gigs}/2003/Jun11.html"><img
+			src="${images}/2003Jun11/poster_2003Jun11_small.jpg" width=200 height=225></a>
+		<br>
+		<b>2003Jun11</b>
+		</td></tr><tr><td valign=top>
+		<a href="${gigs}/2003/Dec24.html"><img
+			src="${images}/2003Dec24/poster_2003Dec24_small.jpg" width=200 height=150></a>
+		<br>
+		<b>2003Dec24</b>
+		</td><td valign=top>
+		<a href="${gigs}/2003/Dec24.html"><img
+			src="${images}/2003Dec24/poster_2003Dec24_small.gif" width=200 height=301></a>
+		<br>
+		<b>2003Dec24</b>
+		</td><td valign=top>
+		<a href="${gigs}/2004/Feb13.html"><img
+			src="${images}/2004Feb13/poster_2004Feb13_small.jpg" width=200 height=300></a>
+		<br>
+		<b>2004Feb13</b>
+		</td></tr><tr><td valign=top>
+		<a href="${gigs}/2004/Feb28.html"><img
+			src="${images}/2004Feb28/poster_2004Feb28_small.jpg" width=200 height=178></a>
+		<br>
+		<b>2004Feb28</b>
+		</td><td valign=top>
+		<a href="${gigs}/2004/May4.html"><img
+			src="${images}/2004May4/poster_2004May4_small.jpg" width=200 height=305></a>
+		<br>
+		<b>2003May4</b>
+		</td><td valign=top>
+		<a href="${gigs}/2004/Apr17.html"><img
+			src="${images}/2004Apr17/poster_2004Apr17_small.jpg" width=200 height=254></a>
+		<br>
+		<b>2004Apr17</b>
+		</td></tr><tr><td valign=top>
+		<a href="${gigs}/2004/Jun6.html"><img
+			src="${images}/2004Jun6/poster_2004Jun6_small.jpg" width=200 height=283></a>
+		<br>
+		<b>2004Jun6</b>
+		</td><td valign=top>
+		<a href="${gigs}/2004/Jun6.html"><img
+			src="${images}/2004Jun6/poster_2004Jun6_2_small.jpg" width=200 height=133></a>
+		<br>
+		<b>2004Jun6</b>
+		</td><td valign=top>
+		<a href="${gigs}/2004/Jul25.html"><img
+			src="${images}/2004Jul25/poster_2004Jul25_small.jpg"
+			width=200 height=113 hspace="5" vspace="5"></a>
+		<br>
+		<b>2004Jul5</b>
+		</td></tr><tr><td valign=top>
+		<a href="${gigs}/2004/Sep12.html"><img
+			src="${images}/2004Sep12/poster_2004Sep12_small.jpg" width=200 height=283></a>
+		<br>
+		<b>2004Jun6</b>
+		</td><td valign=top>
+		
+		<a href="${gigs}/2004/Dec5.html"><img
+			src="${images}/2004Dec5/poster_2004Dec5_small.jpg" width=200 height=252></a>
+		<br>
+		<b>2004Dec5&11</b>
+		</td><td valign=top>
+		
+		<a href="${gigs}/2005Jan27/Jan27.html"><img
+			src="${images}/2005Jan27/poster_2005Jan27_200.jpg" width=200 height=198></a>
+		<br>
+		<b>2005Jan27</b>
+
+		</td></tr>
+		<tr>
+		<td valign=top>
+
+		<a href="${gigs}/2005Jun26/Jun26.html"><img
+			src="${images}/2005Jun26/poster_2005Jun26_200.jpg" width=200 height=347></a>
+		<br>
+		<b>2005Jun26</b>
+
+		</td>
+		<td valign=top>
+
+		<a href="${gigs}/2005Aug20/Aug20.html"><img
+			src="${images}/2005Aug20/poster_2005Aug20_200.jpg" width=200 height=138></a>
+		<br>
+		<b>2005Aug20</b>
+
+		</td>
+		<td valign=top>
+
+		<a href="${gigs}/2005Dec10/Dec10.html"><img
+			src="${images}/2005Dec10/poster_2005Dec10_200.jpg" width=200 height=168></a>
+		<br>
+		<b>2005Jun26</b>
+
+		</td>
+		</tr>
+		<tr>
+		<td valign=top>
+
+		<a href="${gigs}/2006May7/May7.html"><img
+			src="${images}/2006May7/poster_2006May7_200.jpg" width=200 height=160></a>
+		<br>
+		<b>2006May7</b>
+
+		</td>
+		<td valign=top>
+
+		<a href="${gigs}/2006Sep10/Sep10.html"><img
+			src="${images}/2006Sep10/poster_2006Sep10_200.jpg" width=200 height=361></a>
+		<br>
+		<b>2006Sep10</b>
+
+		</td>
+		<td valign=top>
+
+		<a href="${gigs}/2006Aug19/Aug19.html"><img
+			src="${images}/2006Aug19/poster_2006Aug19_200.jpg" width=200 height=282></a>
+		<br>
+		<b>2006Aug19</b>
+
+		</td>
+		</tr>
+		<tr>
+		<td valign=top>
+
+		<a href="${gigs}/2007Dec22/Dec22.html"><img
+			src="${images}/2007Dec22/20071222_poster_200.jpg" width=200 height=231></a>
+		<br>
+		<b>2006Aug19</b>
+
+		</td>
+		</tr>
+
+		</table>
+
+	</center>
+
+	${footer}

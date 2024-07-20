@@ -1,0 +1,238 @@
+#include	locale
+
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+#
+#	generic form input handlers follow..
+#
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+#define	formOption(value, option, default, display)
+	<option value="${option}"
+#live	if (defined(${value}))
+#live	if (getval(${value}) = ${option})
+		SELECTED
+#live	endif
+#live	else if ((defined(default)) && (getval(option) = ${default}))
+	SELECTED
+#live	endif
+#live	if (defined(display))
+	>${display}</option>
+#live	else
+	>${option}</option>
+#live	endif
+
+#define	formTextArea(name, value, cols=40, rows=5, wrap=soft)
+#live	if (defined(${value}))
+	<textarea name="${name}" rows="${rows}" cols="${cols}" wrap=${wrap}>${${value}}</textarea>
+#live	else
+	<textarea name="${name}" rows="${rows}" cols="${cols}" wrap=${wrap}></textarea>
+#live	endif
+
+#define	formPasswordInput(name, value, size=20, max=20)
+#live	if (defined(value))
+#live	if (defined(${value}))
+	<input type="password" name="${name}" size="${size}" maxlength="${max}" value="${${value}}">
+#live	else
+	<input type="password" name="${name}" size="${size}" maxlength="${max}" value="">
+#live	endif
+#live	else
+#live	if (defined(${name}))
+	<input type="password" name="${name}" size="${size}" maxlength="${max}" value="${${name}}">
+#live	else
+	<input type="password" name="${name}" size="${size}" maxlength="${max}" value="">
+#live	endif
+#live	endif
+
+#define	formTextInput(name, value, size=20, max=20)
+#live	if (defined(value))
+#live	if (defined(${value}))
+	<input type="text" name="${name}" size="${size}" maxlength="${max}" value="${${value}}">
+#live	else
+	<input type="text" name="${name}" size="${size}" maxlength="${max}" value="">
+#live	endif
+#live	else
+#live	if (defined(${name}))
+	<input type="text" name="${name}" size="${size}" maxlength="${max}" value="${${name}}">
+#live	else
+	<input type="text" name="${name}" size="${size}" maxlength="${max}" value="">
+#live	endif
+#live	endif
+
+#define	formHiddenInput(name, value, size=20, max=20)
+#live	if (defined(value))
+#live	if (defined(${value}))
+	<input type="hidden" name="*" size="${size}" maxlength="${max}" value="${se1(${name}=${${value}})}">
+#live	else
+	<input type="hidden" name="*" size="${size}" maxlength="${max}" value="${se1(${name}=)}">
+#live	endif
+#live	else
+#live	if (defined(${name}))
+	<input type="hidden" name="*" size="${size}" maxlength="${max}" value="${se1(${name}=${${name}})}">
+#live	else
+	<input type="hidden" name="*" size="${size}" maxlength="${max}" value="${se1(${name}=)}">
+#live	endif
+#live	endif
+
+#define	formSelectList(name, args, default)
+#live	if (makeArray(jnk, ;, ${args}))
+	<select name="${name}">
+#live	loop(z, 1, ${jnk->numResults})
+#live	if (makeArray(arg, :, ${jnk[${z}]}))
+	${formOption(value=${name}, option=${arg[1]}, display=${arg[2]}, default=${default})}
+#live	endif
+#live	endloop
+	</select>
+#live	endif
+
+#define	formSelectYear(name, startyear, endyear, default=0000)
+	<select name="${name}">
+	<option value="0000">--</option>
+#live	loop(y, ${startyear}, ${endyear})
+	${formOption(value=${name}, option=${y}, default=${default})}
+#live	endloop
+	</select>
+
+#define	formSelectDate(name, value, startyear, endyear)
+#live	if (defined(${value}))
+	${define(${name}_day, ${parseDay(${${value}})})}
+	${define(${name}_monthnum, ${parseMonthNum(${${value}})})}
+	${define(${name}_year, ${parseYear(${${value}})})}
+#live	else
+	${define(${name}_day, ${_current_day})}
+	${define(${name}_monthnum, ${_current_monthnum})}
+	${define(${name}_year, ${_current_year})}
+#live	endif
+	<select name="${name}_day">
+	<option value="00">--</option>
+#live	loop(d, 1, 31)
+	${formOption(value=${name}_day, option=${padZero(${d})}, default=${padZero(${int(${_current_day})})})}
+#live	endloop
+	</select>
+	<select name="${name}_monthnum">
+	<option value="00">--</option>
+#live	loop(m, 1, 12)
+	${formOption(value=${name}_monthnum, option=${padZero(${m})}, default=${padZero(${int(${_current_monthnum})})}, display=${num2month(${m})})}
+#live	endloop
+	</select>
+	${formSelectYear(name=${name}_year, startyear=${startyear}, endyear=${endyear}, default=${_current_year})}
+
+#define	formSelectState(name, value, default=6)
+	<select name="${name}">
+#live	loop(sr, 1, ${state->numResults})
+	${formOption(value=${ternary((defined(value)), ${value}, ${name})},
+		option=${state[${sr}]->state_id},
+		default=${default}, display=${state[${sr}]->name})}
+#live	endloop
+	</select>
+
+#define	formSelectCountry(name, value, default=10)
+	<select name="${name}">
+#live	loop(sr, 1, ${country->numResults})
+	${formOption(value=${ternary((defined(value)), ${value}, ${name})},
+		option=${country[${sr}]->country_id},
+		default=${default}, display=${country[${sr}]->name})}
+#live	endloop
+	</select>
+
+#define	formRadioInput(name, value, option)
+	<input type="radio" name="${name}" value="${option}"
+#live	if (defined(value))
+#live	if (getval(${value}) = ${option})
+	CHECKED
+#live	endif
+#live	else
+#live	if (getval(${name}) = ${option})
+	CHECKED
+#live	endif
+#live	endif
+	>
+
+#define	formCheckboxInput(name, value, option)
+	<input type="checkbox" name="${name}" value="${option}"
+#live	if (defined(value))
+#live	if (getval(${value}) = ${option})
+	CHECKED
+#live	endif
+#live	else
+#live	if (getval(${name}) = ${option})
+	CHECKED
+#live	endif
+#live	endif
+	>
+
+#######################################################################
+#
+#	useful script functions
+#
+#######################################################################
+#
+#   printEnv - print the environment
+#
+#define printEnv(color)
+    <table border=1 cellpadding=1 cellspacing=1 bgcolor="${color}">
+#live	loop(x,1,${cgi->numResults})
+#live	if (!inList(${cgi[${x}]->name}, path, file))
+	<tr>
+	<td valign="top">
+	${fontBlack}\$\{cgi->${lower(${cgi[${x}]->name})}\}</font>
+	</td>
+	<td valign="top">
+	${fontBlack}${stripHTML(${cgi[${x}]->value})}&nbsp;</font>
+	</td>
+	</tr>
+#live	endif
+#live	endloop
+	</table>
+
+#
+#	fetchComments - lookup/display "feedback" widget
+#
+#define	fetchComments(res, size=2, face=times, color=#000000, limit=5, bgcolor=#efefef, barcolor=#e6e6e6, width=100%)
+#live	if (getval(db) != feedback)
+	<div id="fbar" style="clear: both; background-color: ${barcolor}; max-width: 100%; padding: 3px; margin: 0px; font-family: ${face}; color: ${color}; text-align: left;">
+#live	if (sql(g:select * from feedback where uri = '${res}' and isdeleted='F' and domain_id=${_domain_id} order by dtcreated desc limit ${limit}))
+#live	endif
+#live	if (getnum(g->numResults) > 0)
+#live	if (getnum(g->numResults) >= ${limit})
+	<b>Visitors' recent comments for this page</b>
+	[<a
+	href="${linkFeedback}?${encrypt(resource=${res})}">Read all ${checkFeedback(${_domain_id}:${res})}</a>]
+#live	else
+	<b>Visitors' comments for this page</b>
+#live	endif
+#	[<a href="${linkFeedback}?${encrypt(postResource=${db}/${page})}">Add your own</a>]
+	</div><!-- fbar -->
+	<div id="feedback" style="background-color: ${bgcolor}; max-width: ${width}; padding: 3px; margin: 0px; font-family: ${face};">
+	<ul style="list-style: none; color: ${color}; text-align: left; margin-left: -10px;">
+#live	while (r = g[*]->uri)
+	<li>
+#live	if (defined(g[${r}]->subject))
+	<b>${g[${r}]->subject}</b>
+#live	endif
+#live	if ((getval(g[${r}]->session_id) = ${_session_int}) || (isAdmin()))
+	[<a href="${linkFeedback}?${encrypt(edit=${g[${r}]->feedback_id})}"><font color="#ff0000">edit</font></a>]
+#live	endif
+#live	if (getval(g[${r}]->who) != company.com)
+	<br>
+	${g[${r}]->who}
+#live	endif
+#live	if (getval(g[${r}]->whence) != YourTown)
+	- ${g[${r}]->whence}
+#live	endif
+	<br>
+	${parseDateTime(${g[${r}]->dtcreated})}
+	(${prettySecondsTerse(${eval(${_timestamp} - ${parseUnix(${g[${r}]->dtcreated})})})} ago)
+	<blockquote>
+		${makeHTML(${g[${r}]->comments})}
+	</blockquote>
+	</li>
+#live	endwhile
+	</ul>
+#live	else
+	<b>No comments yet for this page</b>
+#	<a href="${linkFeedback}?${encrypt(postResource=${db}/${page})}">[Add your own]</a>
+#live	endif
+	</div><!-- feedback -->
+#live	endif
+
+#define	mkBraille(w)
+	<img src="/images/braille/${w}.gif" width="16" height="22" alt="${w}">
